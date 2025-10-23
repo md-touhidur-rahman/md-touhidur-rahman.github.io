@@ -1,0 +1,31 @@
+title: "Md Touhidur Rahman"
+description: "AI & Data Science | Machine Learning | NLP"
+url: "https://md-touhidur-rahman.github.io"
+baseurl: ""
+
+# Use Minimal Mistakes (hosted by GitHub Pages)
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+plugins:
+  - jekyll-include-cache
+
+# Author/sidebar
+author:
+  name: "Md Touhidur Rahman"
+  avatar: "/images/profile.jpg"   # add this image later
+  bio: "I build AI-powered tools for learning and automation."
+  location: "Germany"
+  links:
+    - label: "Website"
+      url: "https://md-touhidur-rahman.github.io"
+    - label: "GitHub"
+      url: "https://github.com/md-touhidur-rahman"
+    - label: "LinkedIn"
+      url: "https://linkedin.com/in/md-touhidur-rahman"
+    - label: "Email"
+      url: "mailto:your.email@example.com"
+
+# Collections (for Projects pages)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
