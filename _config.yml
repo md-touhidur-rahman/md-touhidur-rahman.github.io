@@ -3,10 +3,28 @@ description: "AI & Data Science | Machine Learning | NLP"
 url: "https://md-touhidur-rahman.github.io"
 baseurl: ""
 
-# Use Minimal Mistakes (hosted by GitHub Pages)
+# Theme
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
   - jekyll-include-cache
+
+# Make Jekyll process the _pages folder
+include:
+  - _pages
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Default layout for project items (optional but helpful)
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
 
 # Author/sidebar
 author:
