@@ -1,14 +1,11 @@
 ---
-layout: archive
 title: "Projects"
+layout: collection
 permalink: /projects/
+collection: projects
+entries_layout: grid
 author_profile: true
 ---
 
-{% include base_path %}
+A selection of my recent work in AI and Data Science.
 
-Here are a few of my featured works in AI and Data Science.
-
-{% for post in site.projects %}
-  {% include archive-single.html %}
-{% endfor %}
