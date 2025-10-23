@@ -30,7 +30,7 @@ defaults:
 author:
   name: "Md Touhidur Rahman"
   avatar: "/images/profile.jpg"   # add this image later
-  bio: "I build AI-powered tools for learning and automation."
+  bio: "MSc in Data Science at FAU, Erlangen-Nürnberg"
   location: "Erlangen, Germany"
   links:
     - label: "Website"
