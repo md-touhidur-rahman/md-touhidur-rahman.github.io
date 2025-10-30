@@ -1,46 +1,14 @@
-title: "Md Touhidur Rahman"
-description: "AI & Data Science | Machine Learning | NLP"
-url: "https://md-touhidur-rahman.github.io"
-baseurl: ""
-
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-plugins:
-  - jekyll-include-cache
-
-include:
-  - _pages
-
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-defaults:
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-
-
-# Author/sidebar
 author:
   name: "Md Touhidur Rahman"
-  avatar: "/images/profile.jpg"   # add this image later
-  bio: "MSc in Data Science at FAU, Erlangen-Nürnberg"
+  bio: "M.Sc. Data Science student at FAU Erlangen–Nürnberg · Applied AI · NLP · Data Analytics"
   location: "Erlangen, Germany"
   links:
-    - label: "Website"
-      url: "https://md-touhidur-rahman.github.io"
     - label: "GitHub"
+      icon: "fab fa-github"
       url: "https://github.com/md-touhidur-rahman"
     - label: "LinkedIn"
+      icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/mdtouhidur/"
     - label: "Email"
+      icon: "fas fa-envelope"
       url: "mailto:touhid129@gmail.com"
-
-# Collections (for Projects pages)
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
