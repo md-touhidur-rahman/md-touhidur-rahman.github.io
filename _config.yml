@@ -1,33 +1,51 @@
 title: "Md Touhidur Rahman"
-description: "Applied AI • NLP • Data"
+name: "Md Touhidur Rahman"
+description: "Applied AI, NLP, Data"
 url: "https://md-touhidur-rahman.github.io"
-baseurl: ""   # keep empty for user/username.github.io sites
+baseurl: ""   # keep empty for user.github.io root
+repository: "md-touhidur-rahman/md-touhidur-rahman.github.io"
 
-# --- Minimal Mistakes theme ---
+# ✅ Load Minimal Mistakes from GitHub
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "default"   # options: default, dark, air, sunrise, etc.
 
-# localization + markdown
-locale: en
-markdown: kramdown
-kramdown:
-  input: GFM
-
-# enable required plugins for the theme on GitHub Pages
+# ✅ Required plugin for the theme (works on GitHub Pages)
 plugins:
-  - jekyll-remote-theme
   - jekyll-include-cache
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
 
-# author profile (pulled from _data/authors.yml)
-author: md-touhidur-rahman
+# Theme settings
+minimal_mistakes_skin: "default"   # try "air", "contrast" later if you want
 
-# navigation (pulled from _data/navigation.yml)
-include: ["_pages"]
+markdown: kramdown
 
-# defaults so pages use clean URLs and proper layouts
+# Make sure these folders are built
+include:
+  - _pages
+  - _projects
+
+# Optional collection for detailed project pages (keeps URLs clean)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Sidebar author block (used by author_profile: true)
+author:
+  name: "Md Touhidur Rahman"
+  avatar: /assets/images/profile.jpg   # add this file later; ok if missing now
+  bio: "M.Sc. Data Science @ FAU. Applied AI · NLP · Data."
+  location: "Erlangen, Germany"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/md-touhidur-rahman"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/mdtouhidur/"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:touhid129@gmail.com"
+
+# Default front-matter for pages/posts/projects
 defaults:
   - scope:
       path: ""
@@ -38,6 +56,12 @@ defaults:
   - scope:
       path: ""
       type: posts
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: projects
     values:
       layout: single
       author_profile: true
