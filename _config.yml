@@ -1,14 +1,43 @@
-author:
-  name: "Md Touhidur Rahman"
-  bio: "M.Sc. Data Science student at FAU Erlangen–Nürnberg · Applied AI · NLP · Data Analytics"
-  location: "Erlangen, Germany"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/md-touhidur-rahman"
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/mdtouhidur/"
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:touhid129@gmail.com"
+title: "Md Touhidur Rahman"
+description: "Applied AI • NLP • Data"
+url: "https://md-touhidur-rahman.github.io"
+baseurl: ""   # keep empty for user/username.github.io sites
+
+# --- Minimal Mistakes theme ---
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"   # options: default, dark, air, sunrise, etc.
+
+# localization + markdown
+locale: en
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# enable required plugins for the theme on GitHub Pages
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# author profile (pulled from _data/authors.yml)
+author: md-touhidur-rahman
+
+# navigation (pulled from _data/navigation.yml)
+include: ["_pages"]
+
+# defaults so pages use clean URLs and proper layouts
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
