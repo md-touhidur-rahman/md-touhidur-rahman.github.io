@@ -1,15 +1,20 @@
 ---
-layout: home
-author_profile: true
+layout: single
 title: "Md Touhidur Rahman"
+permalink: /
+author_profile: true
 ---
 
-I am a Data Science M.Sc. student at Friedrich-Alexander-Universität Erlangen-Nürnberg with hands-on experience in business intelligence, data strategy, and workflow automation. My work focuses on turning raw data into transparent, actionable insights using Python, Power BI, and applied machine learning.
+I’m a **Data Science M.Sc. student at FAU Erlangen–Nürnberg**.  
+I build **applied AI/NLP** and **data** tools—small, practical systems that make information easier to use.
 
-I enjoy building clean, efficient data systems—whether it’s automating KPI reporting for supply chains or designing AI tools for education.  
-Currently exploring research in NLP, retrieval-augmented learning, and applied data governance.
+**Focus:** Applied AI & NLP · LLMs & Prompting · Forecasting · Dashboards · Data Quality & Governance
 
-**Core Interests:** AI • Machine Learning • NLP • Dashboard Automation • Data Quality & Governance
+**Start here:**  
+- 🔧 [Projects](/projects/) — selected work (LLM assistant, NLP, forecasting, dashboards)  
+- 📄 [Publications](/publications/) — IEEE papers & notes  
+- 💼 [Experience](/experience/) — roles & responsibilities  
+- 📑 [CV](/assets/CV_Md_Touhidur_Rahman.pdf)
 
-
-See my [Projects](/projects/) and [Publications](/publications/). For collaborations or opportunities, contact me via email or LinkedIn.
+Prefer email or LinkedIn?  
+**[Email](mailto:touhid129@gmail.com)** · **[LinkedIn](https://www.linkedin.com/in/mdtouhidur/)**
