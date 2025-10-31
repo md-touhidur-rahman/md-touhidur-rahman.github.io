@@ -1,0 +1,27 @@
+/* ---- Custom tweaks for Md Touhidur Rahman site ---- */
+
+/* make the sidebar avatar larger */
+.sidebar .author__avatar img {
+  width: 160px;          /* default ~100px; adjust 140–180 as you prefer */
+  height: 160px;
+  border-radius: 12px;   /* rounded corners instead of circle, optional */
+  margin: 0 auto 10px;
+}
+
+/* center and slightly enlarge name & bio */
+.sidebar .author__content {
+  text-align: center;
+}
+.sidebar .author__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.sidebar .author__bio {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* optional: make the whole sidebar slightly wider */
+.sidebar {
+  max-width: 280px;   /* default ~250px */
+}
