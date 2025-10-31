@@ -11,7 +11,8 @@ remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 # ✅ Required plugin for the theme (works on GitHub Pages)
 plugins:
   - jekyll-include-cache
-
+sass:
+  style: compressed
 # Theme settings
 minimal_mistakes_skin: "default"   # try "air", "contrast" later if you want
 
