@@ -25,12 +25,12 @@
 
 /* actual image styling */
 .author__avatar img {
-  width: 100% !important;
-  height: 100% !important;
+  width: 220px !important;
+  height: 220px !important;
   object-fit: cover !important;    /* no stretching */
   object-position: center !important;
   border-radius: 50% !important;
-  border: 2px solid transparent !important; /* thin base border */
+  border: 1px solid transparent !important; /* thin base border */
   background: linear-gradient(135deg, #0a66c2, #4f9cf9) !important; /* stylish gradient */
   padding: 2px !important;         /* space for the gradient edge */
   box-shadow: 0 4px 10px rgba(0,0,0,0.12) !important;
