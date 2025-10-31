@@ -1,35 +1,28 @@
 ---
-# Only the main Sass file needs front matter for Jekyll to process it
+# Only the main Sass file needs front matter
 ---
 
-/* Load Minimal Mistakes skin + base */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* ===== YOUR OVERRIDES (force them with !important) ===== */
-
-/* Test flag — you can delete later */
-html.mm-overrides-loaded body { outline: 2px solid transparent; }
-
-/* Bigger avatar + circular style */
-.author__avatar img {
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
+/* ---- Avatar Fix ---- */
+.author__avatar {
   width: 180px !important;
   height: 180px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border: 3px solid #fff;
-  display: block;
-  margin: 10px auto;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto 15px !important;
 }
 
-
-/* Center name + bio in the profile block */
-.author__content { text-align: center !important; }
-.author__name   { font-size: 1.15rem !important; font-weight: 600 !important; }
-.author__bio    { font-size: .95rem !important; line-height: 1.5 !important; color: #444 !important; }
-
-/* Slightly wider sidebar */
-.sidebar { max-width: 280px !important; }
-body { border-top: 6px solid #0a66c2 !important; }
+.author__avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;     /* keeps proportions — no stretch */
+  object-position: center !important;
+  border-radius: 50% !important;
+  border: 3px solid #fff !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
