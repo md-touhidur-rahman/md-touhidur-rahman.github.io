@@ -13,14 +13,17 @@ html.mm-overrides-loaded body { outline: 2px solid transparent; }
 
 /* Bigger avatar + circular style */
 .author__avatar img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
   width: 180px !important;
   height: 180px !important;
-  border-radius: 50% !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-  border: 3px solid #fff !important;
-  display: block !important;
-  margin: 10px auto !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 3px solid #fff;
+  display: block;
+  margin: 10px auto;
 }
+
 
 /* Center name + bio in the profile block */
 .author__content { text-align: center !important; }
