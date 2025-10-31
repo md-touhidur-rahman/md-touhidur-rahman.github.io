@@ -1,43 +1,31 @@
 title: "Md Touhidur Rahman"
 name: "Md Touhidur Rahman"
-description: "Applied AI, NLP, Data"
+description: "Applied AI · NLP · Data Science"
 url: "https://md-touhidur-rahman.github.io"
-baseurl: ""   # keep empty for user.github.io root
-repository: "md-touhidur-rahman/md-touhidur-rahman.github.io"
+baseurl: ""
 
-# ✅ Load Minimal Mistakes from GitHub
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"
 
-# ✅ Required plugin for the theme (works on GitHub Pages)
 plugins:
   - jekyll-include-cache
+
 sass:
   style: compressed
   load_paths:
     - _sass
     - assets/css
 
-# Theme settings
-minimal_mistakes_skin: "default"   # try "air", "contrast" later if you want
-
-markdown: kramdown
-
-# Make sure these folders are built
 include:
   - _pages
+  - assets
   - _projects
 
-# Optional collection for detailed project pages (keeps URLs clean)
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-# Sidebar author block (used by author_profile: true)
+# Sidebar author profile
 author:
   name: "Md Touhidur Rahman"
-  avatar: /assets/images/profile.jpg   # add this file later; ok if missing now
-  bio: "M.Sc. Data Science @ FAU. Applied AI · NLP · Data."
+  avatar: "/assets/images/profile.jpg"
+  bio: "M.Sc. Data Science @ FAU Erlangen–Nürnberg · Applied AI · NLP · Data Analytics"
   location: "Erlangen, Germany"
   links:
     - label: "GitHub"
@@ -50,7 +38,7 @@ author:
       icon: "fas fa-envelope"
       url: "mailto:touhid129@gmail.com"
 
-# Default front-matter for pages/posts/projects
+# defaults so pages show the sidebar block
 defaults:
   - scope:
       path: ""
@@ -58,21 +46,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-      author_profile: true
-
-sass:
-  style: compressed
-  load_paths:
-    - _sass
-    - assets/css
