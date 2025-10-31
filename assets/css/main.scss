@@ -1,11 +1,14 @@
 ---
-# Only the main Sass file needs front matter
+# Only the main Sass file needs front matter for Jekyll
 ---
 
+/* Load Minimal Mistakes */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* ---- Avatar Fix ---- */
+/* === Custom tweaks === */
+
+/* Fix squished avatar: keep proportions, crop to circle */
 .author__avatar {
   width: 180px !important;
   height: 180px !important;
@@ -14,15 +17,18 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  margin: 0 auto 15px !important;
+  margin: 0 auto 14px !important;
 }
-
 .author__avatar img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;     /* keeps proportions — no stretch */
+  object-fit: cover !important;
   object-position: center !important;
   border-radius: 50% !important;
   border: 3px solid #fff !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
 }
+
+/* Optional polish */
+a { color: #0a66c2; }        /* link color */
+.btn { border-radius: 8px; }  /* softer buttons */
