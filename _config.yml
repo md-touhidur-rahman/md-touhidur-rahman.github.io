@@ -65,3 +65,9 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+sass:
+  style: compressed
+  load_paths:
+    - _sass
+    - assets/css
