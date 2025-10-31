@@ -11,10 +11,12 @@
 /* Fix squished avatar: keep proportions, crop to circle */
 /* === Polished, circular, wider-feel avatar === */
 
+/* === Square professional avatar === */
+
 .author__avatar {
-  width: 220px !important;         /* slightly larger — gives the wider feel */
-  height: 220px !important;        /* same height to keep a true circle */
-  border-radius: 10% !important;   /* ensure perfect circle */
+  width: 220px !important;         /* overall image width */
+  height: 220px !important;        /* equal height for square shape */
+  border-radius: 12px !important;  /* soft rounded corners (optional) */
   overflow: hidden !important;
   display: flex !important;
   justify-content: center !important;
@@ -23,17 +25,22 @@
   position: relative !important;
 }
 
-/* actual image styling */
+/* image itself */
 .author__avatar img {
-  width: 220px !important;
-  height: 220px !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover !important;    /* no stretching */
   object-position: center !important;
-  border-radius: 50% !important;
-  border: 1px solid transparent !important; /* thin base border */
-  background: linear-gradient(135deg, #0a66c2, #4f9cf9) !important; /* stylish gradient */
-  padding: 2px !important;         /* space for the gradient edge */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12) !important;
+  border-radius: 12px !important;  /* match outer container */
+  border: 2px solid #e0e0e0 !important;  /* thin neutral border */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* subtle hover effect for modern polish */
+.author__avatar img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
 
