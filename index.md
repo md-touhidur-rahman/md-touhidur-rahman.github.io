@@ -8,7 +8,7 @@ author_profile: true
 I’m a **Data Science M.Sc. student at FAU Erlangen–Nürnberg**.  
 I build **applied AI/NLP** and **data** tools—small, practical systems that make information easier to use.
 
-**Focus:** Applied AI · NLP · LLMs & Prompting · Forecasting · Dashboards · Data Quality & Governance
+**Focus:** Applied AI · NLP · LLMs & Prompting · Forecasting · Dashboards · Data Analysis
 
 <p>
   <a class="btn btn--primary" href="/projects/">Projects</a>
