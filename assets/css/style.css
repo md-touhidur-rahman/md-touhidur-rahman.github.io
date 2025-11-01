@@ -51,7 +51,7 @@ body::before{
   border-bottom:1px solid var(--line); box-shadow:var(--shadow);
 }
 .navbar .container{
-  display:flex; align-items:center; justify-content:space-between; padding:.9rem 0;
+  display:flex; align-items:center; justify-content:flex-end; padding:1.5rem 0;
 }
 .logo{ display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.3px }
 .logo::before{
@@ -59,7 +59,11 @@ body::before{
   background:linear-gradient(135deg, var(--cyan), var(--cyan-dark));
   box-shadow:0 6px 20px rgba(0,213,255,.35);
 }
-.nav-links{ list-style:none; display:flex; gap:1.15rem; margin:0 }
+.nav-links {
+  order: 1;                    /* keep links before the logo */
+  display: flex;
+  justify-content: flex-end;
+}
 .nav-links a{
   color:var(--cyan-soft); text-decoration:none; font-weight:500;
   padding:.4rem .2rem; border-radius:6px; transition:transform .2s ease, color .2s ease;
