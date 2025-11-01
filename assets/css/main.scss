@@ -13,36 +13,38 @@
 
 /* === Square professional avatar === */
 
+.sidebar {
+  max-width: 320px !important;     /* default is about 260; increase for more room */
+}
+
+/* make the author block take the full new width */
 .author__avatar {
-  width: 300px !important;         /* overall image width */
-  height: 240px !important;        /* equal height for square shape */
-  border-radius: 2px !important;  /* soft rounded corners (optional) */
+  width: 300px !important;         /* wider photo */
+  height: 240px !important;        /* keep same height */
+  border-radius: 12px !important;
   overflow: hidden !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   margin: 0 auto 18px !important;
-  position: relative !important;
 }
 
-/* image itself */
 .author__avatar img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;    /* no stretching */
+  object-fit: cover !important;    /* no stretch */
   object-position: center !important;
-  border-radius: 12px !important;  /* match outer container */
-  border: 2px solid #e0e0e0 !important;  /* thin neutral border */
-  box-shadow: 0 4px 14px rgba(0,0,0,0.12) !important;
+  border-radius: 12px !important;
+  border: 1px solid #d9d9d9 !important; /* thin border */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.sidebar { max-width: 300px !important; }
 
-/* subtle hover effect for modern polish */
 .author__avatar img:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
 
 
 /* Optional polish */
