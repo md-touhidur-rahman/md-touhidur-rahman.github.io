@@ -30,3 +30,12 @@
 /* Optional small polish */
 .btn { border-radius: 8px; }
 a   { color: #0a66c2; }
+.author__avatar img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
