@@ -14,8 +14,8 @@
 /* === Square professional avatar === */
 
 .author__avatar {
-  width: 320px !important;         /* overall image width */
-  height: 220px !important;        /* equal height for square shape */
+  width: 300px !important;         /* overall image width */
+  height: 240px !important;        /* equal height for square shape */
   border-radius: 2px !important;  /* soft rounded corners (optional) */
   overflow: hidden !important;
   display: flex !important;
@@ -27,8 +27,8 @@
 
 /* image itself */
 .author__avatar img {
-  width: 320px !important;
-  height: 220px !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover !important;    /* no stretching */
   object-position: center !important;
   border-radius: 12px !important;  /* match outer container */
@@ -40,8 +40,8 @@
 
 /* subtle hover effect for modern polish */
 .author__avatar img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 
