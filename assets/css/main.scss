@@ -14,7 +14,7 @@
 /* === Square professional avatar === */
 
 .author__avatar {
-  width: 220px !important;         /* overall image width */
+  width: 320px !important;         /* overall image width */
   height: 220px !important;        /* equal height for square shape */
   border-radius: 12px !important;  /* soft rounded corners (optional) */
   overflow: hidden !important;
@@ -27,7 +27,7 @@
 
 /* image itself */
 .author__avatar img {
-  width: 220px !important;
+  width: 320px !important;
   height: 220px !important;
   object-fit: cover !important;    /* no stretching */
   object-position: center !important;
