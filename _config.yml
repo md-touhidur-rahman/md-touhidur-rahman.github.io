@@ -42,4 +42,6 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: true   # ✅ this tells Jekyll to show sidebar author box
+      sidebar:
+        nav: "main"          # ✅ links defined in navigation.yml
