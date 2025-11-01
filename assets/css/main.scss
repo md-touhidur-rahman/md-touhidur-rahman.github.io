@@ -36,6 +36,7 @@
   box-shadow: 0 4px 14px rgba(0,0,0,0.12) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.sidebar { max-width: 300px !important; }
 
 /* subtle hover effect for modern polish */
 .author__avatar img:hover {
