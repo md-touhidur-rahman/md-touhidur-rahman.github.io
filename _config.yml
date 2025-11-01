@@ -22,7 +22,7 @@ include:
 
 author:
   name: "Md Touhidur Rahman"
-  avatar: "/assets/images/profile.jpg"   # must exist, square
+  avatar: "/assets/images/profile.jpg"
   bio: "M.Sc. Data Science @ FAU Erlangen–Nürnberg · Applied AI · NLP · Data Analytics"
   location: "Erlangen, Germany"
   links:
