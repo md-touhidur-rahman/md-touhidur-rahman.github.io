@@ -2,8 +2,9 @@
 layout: single
 title: "Md Touhidur Rahman"
 permalink: /
-author_profile: true
+author_profile: true     # ✅ this line is what moves it into the sidebar
 ---
+
 
 I’m a **Data Science M.Sc. student at FAU Erlangen–Nürnberg**.  
 I build **applied AI/NLP** and **data** tools—small, practical systems that make information easier to use.
