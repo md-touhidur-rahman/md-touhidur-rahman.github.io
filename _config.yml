@@ -9,7 +9,6 @@ minimal_mistakes_skin: "default"
 
 plugins:
   - jekyll-include-cache
-  - jekyll-remote-theme
 
 sass:
   style: compressed
@@ -20,12 +19,10 @@ sass:
 include:
   - _pages
   - assets
-  - _projects
 
-# Sidebar author profile
 author:
   name: "Md Touhidur Rahman"
-  avatar: "/assets/images/profile.jpg"
+  avatar: "/assets/images/profile.jpg"   # must exist, square
   bio: "M.Sc. Data Science @ FAU Erlangen–Nürnberg · Applied AI · NLP · Data Analytics"
   location: "Erlangen, Germany"
   links:
@@ -39,7 +36,6 @@ author:
       icon: "fas fa-envelope"
       url: "mailto:touhid129@gmail.com"
 
-# defaults so pages show the sidebar block
 defaults:
   - scope:
       path: ""
