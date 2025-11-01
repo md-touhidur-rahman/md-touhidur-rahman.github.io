@@ -19,23 +19,30 @@
   --maxw: 1100px;
 }
 
-/* ---------- Base ---------- */
-*{box-sizing:border-box}
-html,body{height:100%}
-html{scroll-behavior:smooth}
+/* ---------- Base / Page Skeleton ---------- */
+*{ box-sizing:border-box }
+html{ height:100%; scroll-behavior:smooth }
+
+/* Use CSS GRID so footer stays at the bottom on short pages */
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   color:var(--text);
   background:#0d1014 url("../images/bg.jpg") center/cover fixed no-repeat;
+
+  min-height:100vh;                 /* full viewport height */
+  display:grid;
+  grid-template-rows:auto 1fr auto; /* header | content | footer */
 }
+
 body::before{
   content:"";
   position:fixed; inset:0;
   background:linear-gradient(180deg, rgba(6,10,12,.55), rgba(6,10,12,.55));
   z-index:-1;
 }
-.container{width:min(100% - 2rem, var(--maxw)); margin-inline:auto}
+
+.container{ width:min(100% - 2rem, var(--maxw)); margin-inline:auto }
 
 /* ---------- Navbar ---------- */
 .navbar{
@@ -46,96 +53,96 @@ body::before{
 .navbar .container{
   display:flex; align-items:center; justify-content:space-between; padding:.9rem 0;
 }
-.logo{display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.3px}
-.logo::before{content:""; width:26px; height:26px; border-radius:8px;
+.logo{ display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.3px }
+.logo::before{
+  content:""; width:26px; height:26px; border-radius:8px;
   background:linear-gradient(135deg, var(--cyan), var(--cyan-dark));
   box-shadow:0 6px 20px rgba(0,213,255,.35);
 }
-.nav-links{list-style:none; display:flex; gap:1.15rem; margin:0}
+.nav-links{ list-style:none; display:flex; gap:1.15rem; margin:0 }
 .nav-links a{
   color:var(--cyan-soft); text-decoration:none; font-weight:500;
   padding:.4rem .2rem; border-radius:6px; transition:transform .2s ease, color .2s ease;
 }
-.nav-links a:hover,.nav-links a.active{color:#fff; transform:translateY(-1px)}
-@media (max-width:720px){.navbar .container{flex-wrap:wrap; gap:.6rem}.nav-links{width:100%; justify-content:space-between}}
-
-/* ---------- Hero ---------- */
-.hero{text-align:center; padding:clamp(3rem,8vw,6rem) 1rem 3rem}
-.profile-pic{
-  width:184px; height:184px; border-radius:50%; object-fit:cover; object-position:center;
-  border:3px solid var(--cyan-dark);
-  box-shadow:0 0 24px rgba(0,213,255,.25); /* cyan glow */
-  margin:0 auto 1.1rem; animation:fadeUp .7s ease both; transition:transform .25s ease, box-shadow .25s ease;
+.nav-links a:hover,.nav-links a.active{ color:#fff; transform:translateY(-1px) }
+@media (max-width:720px){
+  .navbar .container{ flex-wrap:wrap; gap:.6rem }
+  .nav-links{ width:100%; justify-content:space-between }
 }
-.profile-pic:hover{transform:scale(1.03); box-shadow:0 0 34px rgba(0,213,255,.45)}
-h1{font-size:clamp(2rem,3.6vw,2.7rem); margin:.25rem 0 .45rem}
-.subtitle{color:var(--cyan-soft); opacity:.9; max-width:780px; margin:0 auto .9rem}
+
+/* ---------- Hero (put your hero/content inside <main>) ---------- */
+.hero{ text-align:center; padding:clamp(3rem,8vw,6rem) 1rem 3rem }
+.profile-pic{
+  width:184px; height:184px; border-radius:50%;
+  object-fit:cover; object-position:center;
+  border:3px solid var(--cyan-dark);              /* dark-cyan border */
+  box-shadow:0 0 24px rgba(0,213,255,.25);        /* cyan glow */
+  margin:0 auto 1.1rem;
+  animation:fadeUp .7s ease both;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.profile-pic:hover{ transform:scale(1.03); box-shadow:0 0 34px rgba(0,213,255,.45) }
+h1{ font-size:clamp(2rem,3.6vw,2.7rem); margin:.25rem 0 .45rem }
+.subtitle{ color:var(--cyan-soft); opacity:.9; max-width:780px; margin:0 auto .9rem }
 
 /* ---------- Buttons (dark-cyan) ---------- */
-.buttons{margin-top:1.2rem}
+.buttons{ margin-top:1.2rem }
 .btn{
   display:inline-block; padding:.72rem 1.25rem; margin:.25rem .35rem; border-radius:10px;
-  font-weight:700; letter-spacing:.2px; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  font-weight:700; letter-spacing:.2px; text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
 }
 .btn.primary{
   background:linear-gradient(180deg, var(--cyan-dark), #0089a4);
   color:#f4feff; box-shadow:0 12px 26px rgba(0,167,199,.35);
 }
-.btn.primary:hover{transform:translateY(-2px); box-shadow:0 16px 32px rgba(0,167,199,.45)}
+.btn.primary:hover{ transform:translateY(-2px); box-shadow:0 16px 32px rgba(0,167,199,.45) }
 .btn.secondary{
   color:var(--cyan); border:1px solid var(--cyan); background:rgba(255,255,255,.06);
 }
-.btn.secondary:hover{background:rgba(255,255,255,.12); transform:translateY(-2px)}
+.btn.secondary:hover{ background:rgba(255,255,255,.12); transform:translateY(-2px) }
 
 /* ---------- Sections / Cards ---------- */
-.section{padding:2.5rem 0}
-.section h2{font-size:clamp(1.5rem,2.6vw,2rem); margin:0 0 1rem}
-.grid{display:grid; gap:1.25rem; grid-template-columns:repeat(12,1fr)}
+.section{ padding:2.5rem 0 }
+.section h2{ font-size:clamp(1.5rem,2.6vw,2rem); margin:0 0 1rem }
+.grid{ display:grid; gap:1.25rem; grid-template-columns:repeat(12,1fr) }
 .card{
   grid-column:span 6; background:var(--glass-strong); border:1px solid var(--line);
   border-radius:var(--radius); padding:1.1rem; box-shadow:var(--shadow);
   transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-.card:hover{transform:translateY(-4px); box-shadow:0 16px 38px rgba(0,0,0,.45); border-color:rgba(0,213,255,.35)}
-.card h3{margin:.35rem 0 .45rem; font-size:1.06rem}
-.card p{color:var(--cyan-soft); line-height:1.7}
+.card:hover{ transform:translateY(-4px); box-shadow:0 16px 38px rgba(0,0,0,.45); border-color:rgba(0,213,255,.35) }
+.card h3{ margin:.35rem 0 .45rem; font-size:1.06rem }
+.card p{ color:var(--cyan-soft); line-height:1.7 }
 .tag{
   display:inline-block; font-size:.78rem; padding:.22rem .5rem; border-radius:999px;
   border:1px solid rgba(0,213,255,.28);
   color:#d8fbff; background:linear-gradient(180deg, rgba(0,213,255,.18), rgba(0,213,255,.08));
   margin-right:.35rem;
 }
-@media (max-width:980px){.card{grid-column:span 12}}
+@media (max-width:980px){ .card{ grid-column:span 12 } }
 
 /* ---------- General Content ---------- */
-.content{padding:2rem 0 3rem}
-.content p{color:var(--text); line-height:1.78; margin:0 0 1rem}
-a{color:var(--cyan); text-decoration:none}
-a:hover{text-decoration:underline}
+.content{ padding:2rem 0 3rem }
+.content p{ color:var(--text); line-height:1.78; margin:0 0 1rem }
+a{ color:var(--cyan); text-decoration:none }
+a:hover{ text-decoration:underline }
 
-/* ---------- Footer ---------- */
-/* ---------- Fix Footer Position ---------- */
-html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+/* ---------- Footer (bottom row of the grid) ---------- */
+footer{
+  background:var(--glass);
+  backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);
+  width:100%;
 }
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* optional: centers hero content vertically */
+footer .container{
+  padding:1.2rem 0;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.6rem; flex-wrap:wrap;
 }
-
-footer {
-  margin-top: auto;
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid var(--line);
-  width: 100%;
-}
-
+footer p{ color:var(--muted); margin:0 }
+footer .socials a{ color:var(--cyan); text-decoration:none; margin:0 .4rem }
+footer .socials a:hover{ text-decoration:underline }
 
 /* ---------- Forms (Contact page) ---------- */
 .input, textarea{
@@ -143,10 +150,10 @@ footer {
   background:rgba(255,255,255,.04); border:1px solid var(--line); outline:none;
   transition:border-color .18s ease, box-shadow .18s ease;
 }
-.input:focus, textarea:focus{border-color:rgba(0,213,255,.45); box-shadow:0 0 0 4px rgba(0,213,255,.16)}
-textarea{min-height:160px; resize:vertical}
+.input:focus, textarea:focus{ border-color:rgba(0,213,255,.45); box-shadow:0 0 0 4px rgba(0,213,255,.16) }
+textarea{ min-height:160px; resize:vertical }
 
 /* ---------- Animations ---------- */
-@keyframes fadeUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
-.fade{animation:fadeUp .6s ease both}
-@media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+@keyframes fadeUp{ from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
+.fade{ animation:fadeUp .6s ease both }
+@media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important } }
