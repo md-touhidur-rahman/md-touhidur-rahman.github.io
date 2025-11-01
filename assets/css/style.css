@@ -114,14 +114,28 @@ a{color:var(--cyan); text-decoration:none}
 a:hover{text-decoration:underline}
 
 /* ---------- Footer ---------- */
-footer{
-  margin-top:auto; background:var(--glass); backdrop-filter:blur(8px);
-  border-top:1px solid var(--line);
+/* ---------- Fix Footer Position ---------- */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-footer .container{padding:1.2rem 0; display:flex; align-items:center; justify-content:space-between; gap:.6rem; flex-wrap:wrap}
-footer p{color:var(--cyan-soft); margin:0}
-footer .socials a{color:var(--cyan); text-decoration:none; margin:0 .4rem}
-footer .socials a:hover{text-decoration:underline}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* optional: centers hero content vertically */
+}
+
+footer {
+  margin-top: auto;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  width: 100%;
+}
+
 
 /* ---------- Forms (Contact page) ---------- */
 .input, textarea{
