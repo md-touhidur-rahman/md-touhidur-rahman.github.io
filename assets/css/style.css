@@ -112,14 +112,23 @@ body::before {
   padding: clamp(3rem, 8vw, 6rem) 1rem 3rem;
 }
 .profile-pic {
-  width: 180px; height: 180px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  object-fit: cover; object-position: center;
-  border: 3px solid rgba(255,255,255,.9);
-  box-shadow: var(--shadow);
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #00ffff; /* dark cyan border */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25); /* soft glow effect */
   margin: 0 auto 1.1rem;
-  animation: fadeUp .7s ease both;
+  animation: fadeUp 0.7s ease both;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+.profile-pic:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.45);
+}
+
 h1 {
   font-size: clamp(1.9rem, 3.5vw, 2.6rem);
   letter-spacing: .2px;
