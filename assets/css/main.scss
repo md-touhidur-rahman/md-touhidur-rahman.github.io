@@ -6,50 +6,27 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* === Custom tweaks === */
-
-/* Fix squished avatar: keep proportions, crop to circle */
-/* === Polished, circular, wider-feel avatar === */
-
-/* === Square professional avatar === */
-
-@media (min-width: 1024px) {
-
-
-  /* 3) Make the avatar truly wider (landscape) */
-  /* === Wider avatar inside normal sidebar === */
+/* =============================
+   Avatar: square, clean, no squish
+   ============================= */
 
 .author__avatar {
-  width: 260px !important;         /* make wider; try 260–280 */
-  height: 220px !important;        /* keep height fixed */
-  border-radius: 12px !important;  /* gentle corners */
-  overflow: hidden !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin: 0 auto 18px !important;  /* centers within current sidebar */
+  overflow: hidden;
+  border-radius: 12px;              /* square with soft corners */
 }
 
 .author__avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;    /* no stretch */
-  object-position: center !important;
-  border-radius: 12px !important;
-  border: 1px solid #d9d9d9 !important; /* thin border */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 200px;                     /* safe size inside sidebar */
+  height: 200px;
+  object-fit: cover;                /* no stretching */
+  object-position: center;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;        /* thin border */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  display: block;
+  margin: 0 auto 10px;              /* center inside sidebar */
 }
 
-.author__avatar img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-
-
-
-
-/* Optional polish */
-a { color: #0a66c2; }        /* link color */
-.btn { border-radius: 8px; }  /* softer buttons */
+/* Optional small polish */
+.btn { border-radius: 8px; }
+a   { color: #0a66c2; }
