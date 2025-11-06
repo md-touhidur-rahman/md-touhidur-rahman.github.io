@@ -52,7 +52,7 @@ body::before{
 }
 
 /* ======================================================
-   NAVBAR (right aligned + image logo)
+   NAVBAR (right aligned + image logo, no dots)
 ====================================================== */
 .navbar{
   position:sticky;
@@ -63,24 +63,30 @@ body::before{
   border-bottom:1px solid var(--line);
   box-shadow:var(--shadow);
 }
+
 .navbar .container{
   display:flex;
   align-items:center;
-  justify-content:flex-end;   /* everything goes to the right */
+  justify-content:flex-end;   /* everything to the right */
   gap:1.1rem;
   padding:1.1rem 0;
 }
 
-/* nav links (list) */
+/* nav links list (no dots, right aligned) */
 .nav-links{
-  order:1;                    /* links first */
+  order:1;                    
   display:flex;
   gap:1.15rem;
-  list-style:none;            /* remove bullets */
   margin:0;
   padding:0;
   justify-content:flex-end;
+  list-style:none;             /* remove dots */
 }
+
+.nav-links li{
+  list-style:none;             /* extra safety */
+}
+
 .nav-links a{
   color:var(--cyan-soft);
   text-decoration:none;
@@ -89,25 +95,25 @@ body::before{
   border-radius:6px;
   transition:transform .2s ease, color .2s ease;
 }
+
 .nav-links a:hover,
 .nav-links a.active{
   color:#fff;
   transform:translateY(-1px);
 }
 
-/* logo (image, rightmost) */
+/* logo (rightmost) */
 .logo{
-  order:2;                    /* logo on the far right */
-  width:48px;                 /* box to contain your uncropped image */
+  order:2;
+  width:48px;
   height:48px;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;            /* hide extra turquoise space from original image */
+  overflow:hidden;
   border-radius:8px;
 }
 
-/* actual image */
 .logo img{
   width:100%;
   height:100%;
