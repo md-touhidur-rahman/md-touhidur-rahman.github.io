@@ -52,7 +52,7 @@ body::before{
 }
 
 /* ======================================================
-   NAVBAR — Logo height match + wider spaced links
+   NAVBAR — Centered links + equal top/bottom spacing
 ====================================================== */
 .navbar {
   position: sticky;
@@ -66,16 +66,16 @@ body::before{
 
 .navbar .container {
   display: flex;
-  align-items: center;
-  justify-content: flex-end; /* right-aligned */
-  height: 64px; /* same as logo height */
+  align-items: center;        /* vertically centers both logo and links */
+  justify-content: flex-end;  /* right-aligned navbar */
+  height: 64px;               /* same as logo height */
   gap: 2rem;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 /* ---------- Logo ---------- */
 .logo {
-  order: 2; /* keep it on the far right */
+  order: 2; /* logo stays at the far right */
   width: 56px;
   height: 56px;
   display: flex;
@@ -94,7 +94,7 @@ body::before{
   filter: drop-shadow(0 0 6px rgba(0, 213, 255, 0.35));
 }
 
-/* Logo hover animation */
+/* 3D hover */
 .logo img:hover {
   transform: rotateY(12deg) scale(1.03);
   filter: drop-shadow(0 0 14px rgba(0, 213, 255, 0.6));
@@ -104,9 +104,9 @@ body::before{
 .nav-links {
   order: 1;
   display: flex;
-  align-items: center;
+  align-items: center;         /* vertical centering of links */
   justify-content: flex-end;
-  gap: 2.5rem; /* increased gap between nav links */
+  gap: 2.5rem;                 /* horizontal distance between links */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -119,12 +119,15 @@ body::before{
 }
 
 .nav-links a {
+  display: flex;               /* makes the text vertically centered inside the flex container */
+  align-items: center;
   color: var(--cyan-soft);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
   transition: transform 0.2s ease, color 0.2s ease;
-  padding: 0.3rem 0;
+  height: 64px;                /* equal to navbar height for perfect vertical centering */
+  padding: 0 0.3rem;
 }
 
 .nav-links a:hover,
@@ -133,7 +136,7 @@ body::before{
   transform: translateY(-2px);
 }
 
-/* ---------- Responsive (mobile) ---------- */
+/* ---------- Responsive ---------- */
 @media (max-width: 720px) {
   .navbar .container {
     flex-wrap: wrap;
@@ -148,11 +151,17 @@ body::before{
     gap: 1rem;
   }
 
+  .nav-links a {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
   .logo {
     width: 48px;
     height: 48px;
   }
 }
+
 
 /* ======================================================
    HERO
