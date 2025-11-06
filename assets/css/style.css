@@ -52,92 +52,105 @@ body::before{
 }
 
 /* ======================================================
-   NAVBAR (right aligned + image logo, no dots)
+   NAVBAR — Logo height match + wider spaced links
 ====================================================== */
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:var(--glass);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-  box-shadow:var(--shadow);
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
-.navbar .container{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;   /* everything to the right */
-  gap:1.1rem;
-  padding:1.1rem 0;
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* right-aligned */
+  height: 64px; /* same as logo height */
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
-/* nav links list (no dots, right aligned) */
-.nav-links{
-  order:1;                    
-  display:flex;
-  gap:1.15rem;
-  margin:0;
-  padding:0;
-  justify-content:flex-end;
-  list-style:none;             /* remove dots */
+/* ---------- Logo ---------- */
+.logo {
+  order: 2; /* keep it on the far right */
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-.nav-links li{
-  list-style:none;             /* extra safety */
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 0 6px rgba(0, 213, 255, 0.35));
 }
 
-.nav-links a{
-  color:var(--cyan-soft);
-  text-decoration:none;
-  font-weight:500;
-  padding:.4rem .2rem;
-  border-radius:6px;
-  transition:transform .2s ease, color .2s ease;
+/* Logo hover animation */
+.logo img:hover {
+  transform: rotateY(12deg) scale(1.03);
+  filter: drop-shadow(0 0 14px rgba(0, 213, 255, 0.6));
+}
+
+/* ---------- Navigation Links ---------- */
+.nav-links {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2.5rem; /* increased gap between nav links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--cyan-soft);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+  padding: 0.3rem 0;
 }
 
 .nav-links a:hover,
-.nav-links a.active{
-  color:#fff;
-  transform:translateY(-1px);
+.nav-links a.active {
+  color: #fff;
+  transform: translateY(-2px);
 }
 
-/* logo (rightmost) */
-.logo{
-  order:2;
-  width:60px;
-  height:60px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  border-radius:8px;
-}
-
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  transition:transform 0.4s ease, filter 0.4s ease;
-  transform-style:preserve-3d;
-  filter:drop-shadow(0 0 6px rgba(0,213,255,0.35));
-}
-
-/* 3D hover */
-.logo img:hover{
-  transform:rotateY(12deg) scale(1.03);
-  filter:drop-shadow(0 0 14px rgba(0,213,255,0.6));
-}
-
-/* mobile */
-@media (max-width:720px){
-  .navbar .container{
-    flex-wrap:wrap;
-    justify-content:space-between;
+/* ---------- Responsive (mobile) ---------- */
+@media (max-width: 720px) {
+  .navbar .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    padding: 0.8rem 1rem;
   }
-  .nav-links{
-    width:100%;
-    justify-content:space-between;
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
   }
 }
 
@@ -336,22 +349,4 @@ textarea{
 .fade{ animation:fadeUp .6s ease both; }
 @media (prefers-reduced-motion:reduce){
   *{ animation:none !important; transition:none !important; }
-}
-/* --- FINAL NAV OVERRIDES --- */
-.navbar ul,
-.navbar li {
-  list-style: none !important;      /* kill the dots for sure */
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links {
-  display: flex !important;
-  gap: 1.6rem;                      /* distance between menu items */
-  align-items: center;
-}
-
-.nav-links a {
-  display: inline-block;
-  padding: 0.25rem 0;               /* small vertical breathing room */
 }
