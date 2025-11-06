@@ -243,28 +243,28 @@ h1 {
 }
 
 /* ======================================================
-   FOOTER — Single-Line Elegant Dark Cyan
+   FOOTER — Professional One-Line Layout (Fixed)
 ====================================================== */
 footer {
-  background: linear-gradient(180deg, #002f36, #001e23); /* deep cyan gradient */
-  backdrop-filter: blur(8px);
-  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, #002f36, #001e23); /* distinct cyan-dark background */
+  border-top: 1px solid rgba(0, 213, 255, 0.2);
   box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.4);
   color: var(--muted);
   font-size: 0.95rem;
   width: 100%;
-  padding: 0.9rem 2rem;
+  padding: 1rem 2rem;
+  position: relative;
 }
-
 
 .footer-container {
   max-width: var(--maxw);
   margin: 0 auto;
-  display: flex;
-  align-items: center;            /* vertically center everything */
-  justify-content: space-between; /* left | center | right layout */
-  flex-wrap: wrap;
+  display: flex !important;
+  align-items: center !important;       /* vertical centering */
+  justify-content: space-between !important; /* left | center | right */
+  flex-wrap: nowrap !important;
   gap: 1rem;
+  width: 100%;
 }
 
 /* Left */
@@ -284,14 +284,20 @@ footer {
   white-space: nowrap;
 }
 
-/* Right (Socials) */
+/* Right */
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
 .footer-right a {
   color: var(--cyan);
   text-decoration: none;
-  margin-left: 1rem;
   font-weight: 600;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  white-space: nowrap;
 }
 
 .footer-right a:hover {
@@ -299,7 +305,7 @@ footer {
   text-shadow: 0 0 8px var(--cyan);
 }
 
-/* Stick footer to bottom if content is short */
+/* Footer stick to bottom */
 html, body {
   height: 100%;
   display: flex;
@@ -312,17 +318,18 @@ footer {
   margin-top: auto;
 }
 
-/* Responsive: stack when small */
+/* Responsive (mobile) */
 @media (max-width: 720px) {
   .footer-container {
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
     gap: 0.4rem;
   }
-  .footer-right a {
-    margin: 0 0.5rem;
+  .footer-right {
+    justify-content: center;
   }
 }
+
 
 
 /* ======================================================
