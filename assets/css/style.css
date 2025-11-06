@@ -68,7 +68,7 @@ body::before {
   /* layout */
   display: flex;
   align-items: center;       /* vertical centering of links and logo */
-  justify-content: flex-end; /* push everything to right */
+  justify-content: space-between; /* push everything to right */
   height: 56px;              /* same height as logo */
   padding: 0 2rem;
   gap: 3rem;                 /* space between links and logo */
