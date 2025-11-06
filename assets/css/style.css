@@ -105,8 +105,8 @@ body::before{
 /* logo (rightmost) */
 .logo{
   order:2;
-  width:48px;
-  height:48px;
+  width:60px;
+  height:60px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -336,4 +336,22 @@ textarea{
 .fade{ animation:fadeUp .6s ease both; }
 @media (prefers-reduced-motion:reduce){
   *{ animation:none !important; transition:none !important; }
+}
+/* --- FINAL NAV OVERRIDES --- */
+.navbar ul,
+.navbar li {
+  list-style: none !important;      /* kill the dots for sure */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links {
+  display: flex !important;
+  gap: 1.6rem;                      /* distance between menu items */
+  align-items: center;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 0.25rem 0;               /* small vertical breathing room */
 }
