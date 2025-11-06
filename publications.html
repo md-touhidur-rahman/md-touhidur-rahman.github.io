@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    /* ======= Page-Specific Styles ======= */
+    .banner {
+      width: 100%;
+      padding: 3rem 0;
+      background: linear-gradient(135deg, rgba(0,47,54,0.85), rgba(0,30,35,0.85));
+      border-top: 1px solid rgba(0,213,255,0.2);
+      border-bottom: 1px solid rgba(0,213,255,0.2);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .banner .container {
+      width: min(100% - 2rem, 1100px);
+      margin: 0 auto;
+      color: var(--text);
+    }
+    .banner h1, .banner h2 {
+      color: var(--cyan-soft);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--cyan);
+      padding-left: 0.75rem;
+    }
+
+    .publication-card {
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem 1.8rem;
+      border-radius: 12px;
+      border-left: 3px solid var(--cyan-dark);
+      transition: transform .25s ease, box-shadow .25s ease;
+      margin-bottom: 1.5rem;
+    }
+    .publication-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,213,255,0.25);
+    }
+    .publication-card h3 {
+      color: #fff;
+      margin: 0 0 .4rem;
+      font-size: 1.2rem;
+    }
+    .publication-card span {
+      color: var(--cyan-soft);
+      font-size: 0.9rem;
+    }
+    .publication-card p { line-height: 1.7; margin-top: 0.6rem; }
+
+    .coming-soon {
+      text-align: center;
+      color: var(--muted);
+      font-style: italic;
+      opacity: 0.8;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="Touhid Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section class="banner fade">
+    <div class="container">
+      <h1>Research Publications</h1>
+      <p>
+        My research explores the intersection of <strong>Data Science</strong>, 
+        <strong>Deep Learning</strong>, and <strong>Applied AI</strong>.  
+        I focus on making data more meaningful through intelligent modeling and language technologies.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======= PUBLICATION CARD ======= -->
+  <section class="banner fade">
+    <div class="container">
+      <div class="publication-card">
+        <h3>Time Series Forecasting of Agricultural Products Sale Using Deep Learning</h3>
+        <span>IEEE 14th International Conference on Computing, Communication and Networking Technologies (ICCCNT), IIT Delhi, July 2023</span>
+        <p><strong>Authors:</strong> Md. Touhidur Rahman, Mst. Eshita Khatun, Archina Mahmuda Asha, Mohammad Jahangir Alam</p>
+        <p>
+          This paper proposes a deep learning approach to forecast agricultural product sales using 
+          <strong>Multi-Step LSTM</strong> models. It improves forecasting accuracy and helps
+          optimize supply chain and production planning decisions.
+        </p>
+        <p>
+          <strong>DOI:</strong> 
+          <a href="https://doi.org/10.1109/ICCCNT56998.2023.10307538" target="_blank">10.1109/ICCCNT56998.2023.10307538</a><br>
+          <strong>Conference:</strong> IEEE ICCCNT 2023, IIT Delhi<br>
+          <strong>Read Online:</strong> 
+          <a href="https://www.researchgate.net/publication/375879288_Time_Series_Forecasting_of_Agricultural_Products_Sale_Using_Deep_Learning" target="_blank">
+            ResearchGate
+          </a>
+        </p>
+      </div>
+
+      <div class="coming-soon">
+        More research and publications are on the way · Stay tuned!
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Md Touhidur Rahman</div>
+      <div class="footer-center">Empowering Data · AI · Innovation</div>
+      <div class="footer-right">
+        <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+        <a href="mailto:touhid129@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
 
