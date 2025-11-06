@@ -53,31 +53,29 @@ body::before {
 /* ======================================================
    NAVBAR — right-aligned, centered links, larger font
 ====================================================== */
+/* ======================================================
+   NAVBAR — FINAL VERSION for your HTML
+====================================================== */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 50;
-  height: 64px;
+  z-index: 100;
   background: var(--glass);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   box-shadow: var(--shadow);
+
+  /* layout */
   display: flex;
-  align-items: center;
+  align-items: center;       /* vertical centering of links and logo */
+  justify-content: flex-end; /* push everything to right */
+  height: 64px;              /* same height as logo */
+  padding: 0 2rem;
+  gap: 3rem;                 /* space between links and logo */
 }
 
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 2.5rem;
-  height: 100%;
-  padding: 0 1.5rem;
-}
-
-/* ----- Logo ----- */
+/* ---------- Logo ---------- */
 .logo {
-  order: 2;
   width: 56px;
   height: 56px;
   display: flex;
@@ -91,25 +89,31 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 6px rgba(0, 213, 255, 0.35));
   transition: transform 0.4s ease, filter 0.4s ease;
-  transform-style: preserve-3d;
+  filter: drop-shadow(0 0 6px rgba(0,213,255,0.35));
 }
 
 .logo img:hover {
   transform: rotateY(12deg) scale(1.03);
-  filter: drop-shadow(0 0 14px rgba(0, 213, 255, 0.6));
+  filter: drop-shadow(0 0 14px rgba(0,213,255,0.6));
 }
 
-/* ----- Nav Links ----- */
+/* ---------- Navigation Links ---------- */
 .nav-links {
-  order: 1;
   display: flex;
-  align-items: center;   /* vertical centering */
+  align-items: center;      /* vertical centering */
   justify-content: flex-end;
-  list-style: none;
-  gap: 3rem;             /* spacing between links */
+  list-style: none;         /* remove bullets */
+  margin: 0;
+  padding: 0;
+  gap: 2.8rem;              /* spacing between each link */
+  height: 100%;             /* fill navbar height */
+}
+
+.nav-links li {
   height: 100%;
+  display: flex;
+  align-items: center;      /* center text vertically */
 }
 
 .nav-links a {
@@ -119,7 +123,8 @@ body::before {
   color: var(--cyan-soft);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.05rem;    /* slightly larger font */
+  font-size: 1.1rem;        /* slightly larger font */
+  letter-spacing: 0.3px;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -129,24 +134,34 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* Responsive */
+/* ---------- Responsive (Mobile) ---------- */
 @media (max-width: 720px) {
-  .navbar .container {
+  .navbar {
     flex-wrap: wrap;
     justify-content: space-between;
     height: auto;
     padding: 0.8rem 1rem;
+    gap: 1rem;
   }
+
   .nav-links {
     width: 100%;
     justify-content: space-around;
     gap: 1rem;
+    height: auto;
   }
+
+  .nav-links a {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
   .logo {
     width: 48px;
     height: 48px;
   }
 }
+
 
 /* ======================================================
    HERO SECTION
