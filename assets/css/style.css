@@ -69,7 +69,7 @@ body::before {
   display: flex;
   align-items: center;       /* vertical centering of links and logo */
   justify-content: flex-end; /* push everything to right */
-  height: 64px;              /* same height as logo */
+  height: 56px;              /* same height as logo */
   padding: 0 2rem;
   gap: 3rem;                 /* space between links and logo */
 }
@@ -106,7 +106,7 @@ body::before {
   list-style: none;         /* remove bullets */
   margin: 0;
   padding: 0;
-  gap: 2.8rem;              /* spacing between each link */
+  gap: 3.8rem;              /* spacing between each link */
   height: 100%;             /* fill navbar height */
 }
 
@@ -123,7 +123,7 @@ body::before {
   color: var(--cyan-soft);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;        /* slightly larger font */
+  font-size: 1.25rem;        /* slightly larger font */
   letter-spacing: 0.3px;
   transition: color 0.2s ease, transform 0.2s ease;
 }
