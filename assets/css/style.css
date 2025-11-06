@@ -62,18 +62,21 @@ body::before{
   letter-spacing: .3px;
 }
 
-/* For your image logo */
 .logo img {
-  height: 38px;         /* adjust this to control logo size */
+  height: 32px; /* smaller and elegant — adjust between 28–38px if needed */
   width: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   filter: drop-shadow(0 0 6px rgba(0,213,255,0.35));
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+  transform-style: preserve-3d;
 }
 
+/* Hover animation — slight 3D tilt and glow */
 .logo img:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 12px rgba(0,213,255,0.6));
+  transform: rotateY(12deg) scale(1.05);
+  filter: drop-shadow(0 0 14px rgba(0,213,255,0.55));
 }
 
 .nav-links {
