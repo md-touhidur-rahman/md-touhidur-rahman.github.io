@@ -54,11 +54,28 @@ body::before{
   display:flex; align-items:center; justify-content:flex-end; padding:1.5rem 0;
 }
 .logo{ display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.3px }
-.logo::before{
-  content:""; width:26px; height:26px; border-radius:8px;
-  background:linear-gradient(135deg, var(--cyan), var(--cyan-dark));
-  box-shadow:0 6px 20px rgba(0,213,255,.35);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 800;
+  letter-spacing: .3px;
 }
+
+/* For your image logo */
+.logo img {
+  height: 38px;         /* adjust this to control logo size */
+  width: auto;
+  border-radius: 8px;
+  filter: drop-shadow(0 0 6px rgba(0,213,255,0.35));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(0,213,255,0.6));
+}
+
 .nav-links {
   order: 1;                    /* keep links before the logo */
   display: flex;
