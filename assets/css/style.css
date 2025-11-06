@@ -51,41 +51,33 @@ body::before {
 }
 
 /* ======================================================
-   NAVBAR — right-aligned, centered links, larger font
-====================================================== */
-/* ======================================================
-   NAVBAR — FINAL VERSION for your HTML
+   NAVBAR — Elegant Cyan Gradient + Hover Effects
 ====================================================== */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
   background: linear-gradient(180deg, #002f36, #001e23);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 213, 255, 0.25);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 
-  /* layout */
   display: flex;
-  align-items: center;       /* vertical centering of links and logo */
-  flex-direction: row !important;      /* logo first, links second */
-  justify-content: space-between !important; /* space between logo & links */
-  height: 56px;              /* same height as logo */
+  align-items: center;              /* vertical centering */
+  justify-content: space-between;   /* logo left, links right */
+  height: 56px;
   padding: 0 2rem;
-  gap: 3rem;                 /* space between links and logo */
 }
 
 /* ---------- Logo ---------- */
 .logo {
-  order:0;
-  width: 56px;
-  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  width: 56px;
+  height: 56px;
   border-radius: 8px;
-  margin-right: auto !important;       /* push everything else right */
+  overflow: hidden;
 }
 
 .logo img {
@@ -96,47 +88,73 @@ body::before {
   filter: drop-shadow(0 0 6px rgba(0,213,255,0.35));
 }
 
+/* Hover: subtle 3D glow */
 .logo img:hover {
-  transform: rotateY(12deg) scale(1.03);
+  transform: rotateY(10deg) scale(1.05);
   filter: drop-shadow(0 0 14px rgba(0,213,255,0.6));
 }
 
 /* ---------- Navigation Links ---------- */
 .nav-links {
   display: flex;
-  align-items: center;      /* vertical centering */
+  align-items: center;
   justify-content: flex-end;
-  list-style: none;         /* remove bullets */
+  list-style: none;
   margin: 0;
   padding: 0;
-  gap: 3.8rem;              /* spacing between each link */
-  height: 100%;             /* fill navbar height */
-  order: 1 !important;
-  margin-left: auto !important;
+  gap: 3rem;                        /* spacing between links */
+  height: 100%;
 }
 
 .nav-links li {
-  height: 100%;
   display: flex;
-  align-items: center;      /* center text vertically */
+  align-items: center;
+  height: 100%;
 }
 
+/* base link style */
 .nav-links a {
+  position: relative;
   display: flex;
   align-items: center;
   height: 100%;
   color: var(--cyan-soft);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.25rem;        /* slightly larger font */
+  font-size: 1.25rem;
   letter-spacing: 0.3px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
 }
 
-.nav-links a:hover,
+/* underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--cyan);
+  box-shadow: 0 0 6px rgba(0, 213, 255, 0.6);
+  transition: width 0.3s ease;
+}
+
+/* hover state */
+.nav-links a:hover {
+  color: #fff;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* active link */
 .nav-links a.active {
   color: #fff;
-  transform: translateY(-2px);
+}
+.nav-links a.active::after {
+  width: 100%;
+  background: var(--cyan-dark);
 }
 
 /* ---------- Responsive (Mobile) ---------- */
@@ -159,6 +177,7 @@ body::before {
   .nav-links a {
     height: auto;
     padding: 0.5rem 0;
+    font-size: 1.1rem;
   }
 
   .logo {
@@ -166,6 +185,7 @@ body::before {
     height: 48px;
   }
 }
+
 
 
 /* ======================================================
