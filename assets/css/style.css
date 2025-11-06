@@ -375,35 +375,33 @@ textarea { min-height: 160px; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
-/* === PROJECT TITLE COLOR FIX (No Purple/Blue) === */
-/* === FINAL FIX: Project Link Colors === */
-.projects a,
-.projects a:visited,
-.project-card a,
-.project-card a:visited,
-.project-content a,
-.project-content a:visited {
-  color: #ffffff !important;           /* force white text */
-  text-decoration: none !important;    /* remove underline */
+/* === ABSOLUTE FINAL FIX — Project Title Colors === */
+.projects h2 a,
+.projects h3 a,
+.projects h4 a,
+.projects .project-card a,
+.projects .project-content a,
+.projects .project-card h3 a,
+.projects .project-card h4 a,
+.projects a:visited {
+  color: #ffffff !important;            /* always white */
+  text-decoration: none !important;     /* remove underline */
   font-weight: 600 !important;
+  font-size: 1.15rem !important;
 }
 
-.projects a:hover,
-.project-card a:hover,
-.project-content a:hover {
-  color: var(--cyan-soft) !important;  /* cyan hover glow */
+.projects h2 a:hover,
+.projects h3 a:hover,
+.projects h4 a:hover,
+.projects .project-card a:hover,
+.projects .project-content a:hover {
+  color: var(--cyan-soft) !important;   /* cyan hover */
   text-shadow: 0 0 6px rgba(0,213,255,0.6);
 }
 
-/* optional – ensure any h3/h4 links look right */
-.project-card h3 a,
-.project-card h4 a {
+/* Override default browser visited link globally (nuclear option) */
+a:visited {
   color: #ffffff !important;
-  text-decoration: none !important;
 }
-.project-card h3 a:hover,
-.project-card h4 a:hover {
-  color: var(--cyan-soft) !important;
-  text-shadow: 0 0 6px rgba(0,213,255,0.6);
-}
+
 
