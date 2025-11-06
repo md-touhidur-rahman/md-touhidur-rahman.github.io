@@ -243,51 +243,55 @@ h1 {
 }
 
 /* ======================================================
-   FOOTER — Elegant Dark Cyan Style
+   FOOTER — Single-Line Elegant Dark Cyan
 ====================================================== */
 footer {
-  background: var(--glass);
+  background: linear-gradient(180deg, #002f36, #001e23); /* deep cyan gradient */
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--line);
-  box-shadow: 0 -4px 18px rgba(0,0,0,0.3);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.4);
   color: var(--muted);
   font-size: 0.95rem;
   width: 100%;
+  padding: 0.9rem 2rem;
 }
+
 
 .footer-container {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 1rem 1.5rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center;            /* vertically center everything */
+  justify-content: space-between; /* left | center | right layout */
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* Left Section */
-.footer-left p {
-  margin: 0;
+/* Left */
+.footer-left {
   color: var(--cyan-soft);
   font-weight: 600;
+  white-space: nowrap;
 }
 
-/* Center Tagline */
-.footer-center .tagline {
-  margin: 0;
-  font-style: italic;
+/* Center */
+.footer-center {
+  flex: 1;
+  text-align: center;
   color: var(--muted);
+  font-style: italic;
   letter-spacing: 0.4px;
+  white-space: nowrap;
 }
 
-/* Right — Social Links */
+/* Right (Socials) */
 .footer-right a {
   color: var(--cyan);
   text-decoration: none;
   margin-left: 1rem;
   font-weight: 600;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  white-space: nowrap;
 }
 
 .footer-right a:hover {
@@ -308,16 +312,18 @@ footer {
   margin-top: auto;
 }
 
-/* Responsive */
+/* Responsive: stack when small */
 @media (max-width: 720px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
+    gap: 0.4rem;
   }
   .footer-right a {
-    margin: 0 0.6rem;
+    margin: 0 0.5rem;
   }
 }
+
 
 /* ======================================================
    FORMS
