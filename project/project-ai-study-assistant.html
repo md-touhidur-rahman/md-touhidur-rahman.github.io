@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[PROJECT TITLE] | Md Touhidur Rahman</title>
+  <title>AI Study Assistant | Md Touhidur Rahman</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="icon" href="../favicon.ico" />
   <style>
+    /* ---------- Project Page Styling ---------- */
     .project-header {
       background: linear-gradient(135deg, rgba(0,47,54,0.9), rgba(0,30,35,0.85));
       padding: 3.5rem 1rem;
@@ -41,9 +42,7 @@
       margin: 1rem 0;
       box-shadow: 0 10px 24px rgba(0,0,0,.4);
     }
-    .tag-row {
-      margin-top: .6rem;
-    }
+    .tag-row { margin-top: .6rem; }
     .tag {
       display: inline-block;
       font-size: .7rem;
@@ -55,6 +54,37 @@
       margin-right: .35rem;
       margin-bottom: .35rem;
     }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .btn-group a {
+      display: inline-block;
+      padding: .75rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-demo {
+      background: linear-gradient(180deg, var(--cyan-dark), #0089a4);
+      color: #f4feff;
+      box-shadow: 0 10px 22px rgba(0,167,199,.35);
+    }
+    .btn-demo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0,167,199,.45);
+    }
+    .btn-github {
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+      background: rgba(255,255,255,.06);
+    }
+    .btn-github:hover {
+      background: rgba(255,255,255,.12);
+      transform: translateY(-2px);
+    }
     .btn-back {
       display: inline-block;
       margin-top: 2rem;
@@ -62,11 +92,10 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .btn-back:hover {
-      text-decoration: underline;
-    }
+    .btn-back:hover { text-decoration: underline; }
   </style>
 </head>
+
 <body>
   <!-- NAVBAR -->
   <nav class="navbar">
@@ -84,45 +113,58 @@
 
   <!-- HEADER -->
   <header class="project-header">
-    <h1>[PROJECT TITLE]</h1>
-    <p>[Short one-sentence summary or purpose of the project]</p>
+    <h1>AI Study Assistant</h1>
+    <p>An open-source tool that turns lecture slides into summaries, mind maps, and flashcards — automatically.</p>
   </header>
 
   <!-- CONTENT -->
   <main class="project-content fade">
     <h2>Overview</h2>
-    <p>[Brief description of what the project does, why you built it, and who it helps.]</p>
-
-    <h2>Objectives</h2>
-    <ul>
-      <li>[Objective 1]</li>
-      <li>[Objective 2]</li>
-      <li>[Objective 3]</li>
-    </ul>
+    <p>
+      The <strong>AI Study Assistant</strong> is a Streamlit-based web app that helps students transform complex lecture
+      slides into structured study materials. It automatically generates concise summaries, bilingual flashcards, and
+      mind maps — helping users revise faster, smarter, and language-independently.
+    </p>
+    <p>
+      Designed to support both <strong>English and German</strong>, it leverages open-source
+      <strong>Hugging Face transformer models</strong> and <strong>Python NLP pipelines</strong> for text understanding,
+      summarization, and keyword extraction.
+    </p>
 
     <h2>Key Features</h2>
     <ul>
-      <li>[Feature 1]</li>
-      <li>[Feature 2]</li>
-      <li>[Feature 3]</li>
+      <li> Upload lecture slides (PDF) for automated content extraction and summarization.</li>
+      <li> Generate interactive mind maps for visual learning.</li>
+      <li> Create bilingual flashcards (English/German) using semantic chunking.</li>
+      <li> Save, export, and reuse generated notes across study sessions.</li>
     </ul>
 
-    <h2>Tools & Technologies</h2>
+    <h2>Tech Stack</h2>
     <div class="tag-row">
       <span class="tag">Python</span>
-      <span class="tag">Pandas</span>
-      <span class="tag">LLM</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag">Transformers</span>
+      <span class="tag">Hugging Face</span>
+      <span class="tag">NLP</span>
+      <span class="tag">OpenAI API</span>
     </div>
 
-    <h2>Results & Impact</h2>
-    <p>[Highlight measurable outcomes, insights, or improvements. Example: “Reduced data cleaning time by 70%.”]</p>
+    <h2>App Preview</h2>
+    <img src="../assets/images/ai-assistant-demo.jpg" alt="AI Study Assistant Screenshot" />
 
-    <h2>Gallery</h2>
-    <img src="../assets/images/project-sample.jpg" alt="[Project Screenshot]" />
-
+    <h2>Impact</h2>
     <p>
-      <a href="../projects.html" class="btn-back">← Back to Projects</a>
+      This project was created as a student productivity tool and tested by peers at FAU. Early feedback showed that
+      it reduced manual note-taking time by up to <strong>70%</strong> and improved comprehension for bilingual learners.
+      The app demonstrates how LLMs can augment learning efficiency in academic contexts.
     </p>
+
+    <div class="btn-group">
+      <a href="https://classmind-app-nhcfwxfuezfvsqqnskvc6i.streamlit.app/" target="_blank" class="btn-demo">🚀 Try Live App</a>
+      <a href="https://github.com/md-touhidur-rahman/AI-Study-Assistant" target="_blank" class="btn-github">View on GitHub</a>
+    </div>
+
+    <a href="../projects.html" class="btn-back">← Back to Projects</a>
   </main>
 
   <!-- FOOTER -->
@@ -139,4 +181,3 @@
   </footer>
 </body>
 </html>
-
