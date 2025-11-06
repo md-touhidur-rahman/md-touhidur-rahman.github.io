@@ -403,5 +403,16 @@ textarea { min-height: 160px; resize: vertical; }
 a:visited {
   color: #ffffff !important;
 }
+/* force traffic-light project link to stay white */
+.project-link,
+.project-link:visited {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+}
 
+.project-link:hover {
+  color: var(--cyan-soft) !important;
+  text-shadow: 0 0 6px rgba(0,213,255,0.6);
+}
 
