@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    /* ====== Project page extra styles ====== */
+    .banner {
+      width: 100%;
+      padding: 3rem 0;
+      background: linear-gradient(135deg, rgba(0,47,54,0.85), rgba(0,30,35,0.85));
+      border-top: 1px solid rgba(0,213,255,0.2);
+      border-bottom: 1px solid rgba(0,213,255,0.2);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      margin-bottom: 2.5rem;
+      animation: fadeUp .7s ease both;
+    }
+    .banner:nth-child(even){
+      background: linear-gradient(135deg, rgba(0,30,35,0.85), rgba(0,47,54,0.85));
+    }
+    .banner .container {
+      width: min(100% - 2rem, 1100px);
+      margin: 0 auto;
+      color: var(--text);
+    }
+    .banner h1, .banner h2 {
+      color: var(--cyan-soft);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--cyan);
+      padding-left: 0.75rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .project-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(0,213,255,.12);
+      border-radius: 14px;
+      padding: 1.2rem 1.25rem 1.3rem;
+      box-shadow: 0 8px 22px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.4);
+      border-color: rgba(0,213,255,.4);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .project-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    .tag-row {
+      margin-top: .4rem;
+    }
+    .tag {
+      display: inline-block;
+      font-size: .7rem;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      background: rgba(0,213,255,.12);
+      border: 1px solid rgba(0,213,255,.25);
+      color: #dffbff;
+      margin-right: .35rem;
+      margin-bottom: .35rem;
+    }
+    .project-links a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* mobile */
+    @media (max-width: 720px){
+      .project-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="Touhid Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO / INTRO -->
+  <section class="banner fade">
+    <div class="container">
+      <h1>Projects</h1>
+      <p>
+        A selection of my applied AI, data, and automation work — focused on turning real data into useful tools.
+        Most of these were built to solve actual problems (learning, reporting, or business processes).
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN PROJECTS -->
+  <section class="banner fade">
+    <div class="container">
+      <h2>Featured</h2>
+      <div class="project-grid">
+
+        <!-- AI Study Assistant -->
+        <div class="project-card">
+          <h3>AI Study Assistant (Streamlit)</h3>
+          <p>
+            An open-source tool that converts lecture slides into <strong>summaries</strong>, <strong>mind maps</strong>, 
+            and <strong>flashcards</strong> in both English and German. Built to make studying faster and language-independent.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">NLP</span>
+            <span class="tag">LLM</span>
+            <span class="tag">Hugging Face</span>
+          </div>
+          <p class="project-links">
+            Live demo: <a href="https://lnkd.in/gz9_9vFr" target="_blank">try it here</a>
+          </p>
+        </div>
+
+        <!-- Tens Agro -->
+        <div class="project-card">
+          <h3>Tens Agro Ltd — Data Digitalization & Forecasting</h3>
+          <p>
+            Migrated an analog, pen-and-paper sales workflow into a structured dataset. Cleaned, merged, and validated vouchers;
+            then applied time-series / forecasting to help the business plan inventory and sales.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">Excel → Python</span>
+            <span class="tag">Business Analytics</span>
+          </div>
+          <p class="project-links">
+            Based on: <a href="publications.html">deep learning sales forecasting paper</a>
+          </p>
+        </div>
+
+        <!-- FAU / AIBE style internal tool -->
+        <div class="project-card">
+          <h3>AI/ML Internal Data Workflow (Academic Support)</h3>
+          <p>
+            Support scripts and documentation for AI-related research tasks (preprocessing, dataset structuring,
+            reporting) used in student/research assistant roles at FAU/IFB/AIBE. Focus on making data reusable across teams.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Data Docs</span>
+            <span class="tag">FAU</span>
+            <span class="tag">Collaboration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS / SMALLER WORKS -->
+  <section class="banner fade">
+    <div class="container">
+      <h2>Other Work</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h3>Excel-to-Dashboard Automation</h3>
+          <p>
+            Automated repetitive Excel reporting for an education-tech context, transforming raw CSV/Excel files into
+            structured tables ready for Power BI / visualization.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Reporting</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>LLM Prompting Experiments</h3>
+          <p>
+            Prompt design and response evaluation for chatbot-style assistants — role-based prompting, multilingual tests (DE/EN),
+            and content alignment for internal users.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">GenAI</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Teaching & AI Literacy Content</h3>
+          <p>
+            Created structured materials to help non-technical users understand AI outputs and data flows — aligned with your
+            “data & AI literacy” interest.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Documentation</span>
+            <span class="tag">AI Literacy</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="banner fade">
+    <div class="container">
+      <h2>Want to see the code?</h2>
+      <p>
+        Most of these projects can be shared on request or are on GitHub.
+        I keep some internal/academic work private but can walk through the approach.
+      </p>
+      <p>
+        <a href="https://github.com/md-touhidur-rahman" target="_blank" class="btn secondary">Visit GitHub</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Md Touhidur Rahman</div>
+      <div class="footer-center">Empowering Data · AI · Innovation</div>
+      <div class="footer-right">
+        <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+        <a href="mailto:touhid129@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
 
