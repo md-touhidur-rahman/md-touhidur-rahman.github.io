@@ -376,19 +376,34 @@ textarea { min-height: 160px; resize: vertical; }
   * { animation: none !important; transition: none !important; }
 }
 /* === PROJECT TITLE COLOR FIX (No Purple/Blue) === */
+/* === FINAL FIX: Project Link Colors === */
 .projects a,
 .projects a:visited,
+.project-card a,
+.project-card a:visited,
 .project-content a,
 .project-content a:visited {
-  color: #ffffff !important;        /* white text always */
-  text-decoration: none !important; /* no underline */
-  font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  color: #ffffff !important;           /* force white text */
+  text-decoration: none !important;    /* remove underline */
+  font-weight: 600 !important;
 }
 
 .projects a:hover,
+.project-card a:hover,
 .project-content a:hover {
-  color: var(--cyan-soft) !important; /* cyan hover glow */
+  color: var(--cyan-soft) !important;  /* cyan hover glow */
+  text-shadow: 0 0 6px rgba(0,213,255,0.6);
+}
+
+/* optional – ensure any h3/h4 links look right */
+.project-card h3 a,
+.project-card h4 a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+.project-card h3 a:hover,
+.project-card h4 a:hover {
+  color: var(--cyan-soft) !important;
   text-shadow: 0 0 6px rgba(0,213,255,0.6);
 }
 
