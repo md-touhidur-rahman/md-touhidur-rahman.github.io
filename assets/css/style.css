@@ -243,32 +243,81 @@ h1 {
 }
 
 /* ======================================================
-   FOOTER
+   FOOTER — Elegant Dark Cyan Style
 ====================================================== */
 footer {
   background: var(--glass);
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 18px rgba(0,0,0,0.3);
+  color: var(--muted);
+  font-size: 0.95rem;
   width: 100%;
 }
 
-footer .container {
-  padding: 1.2rem 0;
+.footer-container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
-footer p { color: var(--muted); margin: 0; }
+/* Left Section */
+.footer-left p {
+  margin: 0;
+  color: var(--cyan-soft);
+  font-weight: 600;
+}
 
-footer .socials a {
+/* Center Tagline */
+.footer-center .tagline {
+  margin: 0;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.4px;
+}
+
+/* Right — Social Links */
+.footer-right a {
   color: var(--cyan);
   text-decoration: none;
-  margin: 0 .4rem;
+  margin-left: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-footer .socials a:hover { text-decoration: underline; }
+.footer-right a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--cyan);
+}
+
+/* Stick footer to bottom if content is short */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body > main {
+  flex: 1;
+}
+footer {
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right a {
+    margin: 0 0.6rem;
+  }
+}
 
 /* ======================================================
    FORMS
