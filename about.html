@@ -11,24 +11,22 @@
     .banner {
       width: 100%;
       padding: 3rem 0;
-      background: linear-gradient(135deg, rgba(0,47,54,0.8), rgba(0,30,35,0.85));
+      background: linear-gradient(135deg, rgba(0,47,54,0.85), rgba(0,30,35,0.85));
       border-top: 1px solid rgba(0,213,255,0.2);
       border-bottom: 1px solid rgba(0,213,255,0.2);
       box-shadow: 0 4px 18px rgba(0,0,0,0.4);
       backdrop-filter: blur(10px);
       margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s ease both;
     }
-
     .banner:nth-child(even) {
-      background: linear-gradient(135deg, rgba(0,30,35,0.85), rgba(0,47,54,0.8));
+      background: linear-gradient(135deg, rgba(0,30,35,0.85), rgba(0,47,54,0.85));
     }
-
     .banner .container {
       width: min(100% - 2rem, 1100px);
       margin: 0 auto;
       color: var(--text);
     }
-
     .banner h2 {
       color: var(--cyan-soft);
       font-size: 2rem;
@@ -36,24 +34,25 @@
       border-left: 4px solid var(--cyan);
       padding-left: 0.75rem;
     }
+    .banner p { color: var(--text); line-height: 1.7; margin-bottom: 1rem; }
 
-    .banner p {
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 1rem;
+    /* ======= Quick Facts ======= */
+    .quick-facts {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      font-size: 1.05rem;
+      color: var(--cyan-soft);
+      margin-top: 1rem;
+    }
+    .quick-facts div strong {
+      display: block;
+      font-size: 1.9rem;
+      color: var(--cyan);
+      margin-bottom: 0.2rem;
     }
 
-    .banner ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .banner li {
-      margin-bottom: 0.5rem;
-      color: var(--muted);
-    }
-
+    /* ======= Experience / Education ======= */
     .exp-item, .edu-item {
       margin-bottom: 1.5rem;
       padding: 1rem 1.2rem;
@@ -62,29 +61,20 @@
       border-left: 3px solid var(--cyan-dark);
       transition: transform .25s ease, box-shadow .25s ease;
     }
-
     .exp-item:hover, .edu-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(0,213,255,0.2);
     }
+    .exp-item h3, .edu-item h3 { margin: 0 0 .3rem; color: #fff; }
+    .exp-item span, .edu-item span { color: var(--cyan-soft); font-size: 0.9rem; }
 
-    .exp-item h3, .edu-item h3 {
-      margin: 0 0 .3rem;
-      color: #fff;
-    }
-
-    .exp-item span, .edu-item span {
-      color: var(--cyan-soft);
-      font-size: 0.9rem;
-    }
-
+    /* ======= Skills ======= */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
-
     .skill-card {
       background: rgba(255,255,255,0.05);
       padding: 1rem;
@@ -94,10 +84,19 @@
       color: var(--cyan-soft);
       transition: transform .25s ease, box-shadow .25s ease;
     }
-
     .skill-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(0,213,255,0.25);
+    }
+
+    /* ======= Timeline Dots ======= */
+    .timeline { border-left: 3px solid var(--cyan-dark); padding-left: 1rem; }
+    .timeline .exp-item::before {
+      content: "•";
+      position: absolute;
+      left: -12px;
+      color: var(--cyan);
+      font-size: 1.4rem;
     }
   </style>
 </head>
@@ -117,20 +116,33 @@
     </ul>
   </nav>
 
-  <!-- ======= ABOUT BANNER ======= -->
+  <!-- ======= ABOUT ME ======= -->
   <section class="banner fade">
     <div class="container">
       <h2>About Me</h2>
       <p>
         I’m <strong>Md Touhidur Rahman</strong>, currently pursuing my <strong>M.Sc. in Data Science</strong> at 
-        <em>Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)</em>. 
-        My passion lies in transforming raw data into intelligent, structured insights using AI, automation, and NLP. 
-        I believe in simplifying technology to make data and AI accessible to everyone.
+        <em>Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)</em>.  
+        My work centers on bridging artificial intelligence and practical analytics—helping people make smarter, data-driven decisions.
+      </p>
+      <p>
+        My journey began with Python and data visualization, grew through teaching and mentoring in AI, and evolved into applied NLP, automation, and analytical modeling.  
+        I love simplifying complex data problems into elegant, scalable solutions.
       </p>
     </div>
   </section>
 
-  <!-- ======= EXPERIENCE BANNER ======= -->
+  <!-- ======= QUICK FACTS ======= -->
+  <section class="banner fade">
+    <div class="container quick-facts">
+      <div><strong>2+</strong>Years in Data & AI</div>
+      <div><strong>5+</strong>Projects Completed</div>
+      <div><strong>2</strong>Published Papers</div>
+      <div><strong>3</strong>Research Teams Collaborated</div>
+    </div>
+  </section>
+
+  <!-- ======= EXPERIENCE ======= -->
   <section class="banner fade">
     <div class="container">
       <h2>Experience</h2>
@@ -139,8 +151,8 @@
         <h3>Student Assistant – Artificial Intelligence in Biomedical Engineering (AIBE @ FAU)</h3>
         <span>Nov 2025 – Present · Erlangen, Germany (Hybrid)</span>
         <ul>
-          <li>Assisting research on AI in biomedical data processing and NLP tasks.</li>
-          <li>Supporting model evaluation, data structuring, and internal documentation.</li>
+          <li>Assisting AI and NLP research in biomedical data analysis.</li>
+          <li>Supporting model evaluation, preprocessing, and documentation.</li>
         </ul>
       </div>
 
@@ -148,17 +160,18 @@
         <h3>Student Assistant – IFB Institute, FAU</h3>
         <span>Oct 2025 – Present · Erlangen, Germany (Hybrid)</span>
         <ul>
-          <li>Data documentation, cleaning, and supporting ongoing research activities.</li>
-          <li>Helping standardize digital processes within project teams.</li>
+          <li>Data management and visualization for research projects.</li>
+          <li>Standardizing datasets and automating reporting pipelines.</li>
         </ul>
       </div>
 
       <div class="exp-item">
-        <h3>Quality Assurance Executive – Codingal Technologies</h3>
-        <span>Oct 2023 – Mar 2024 · Remote</span>
+        <h3>Data Analyst Intern – Tens Agro Ltd.</h3>
+        <span>Mar 2021 – Sep 2021 · Dhaka, Bangladesh</span>
         <ul>
-          <li>Automated validation and monitoring of large datasets using Python.</li>
-          <li>Built dashboards for internal analytics and performance tracking.</li>
+          <li>Analyzed agricultural and market data to forecast trends.</li>
+          <li>Automated Excel-based analytics dashboards with Python.</li>
+          <li>Developed Power BI prototypes for management reporting.</li>
         </ul>
       </div>
 
@@ -166,8 +179,8 @@
         <h3>Senior Python Instructor – Codingal Technologies</h3>
         <span>Aug 2022 – Oct 2023 · Remote</span>
         <ul>
-          <li>Conducted data-driven project training for students and professionals.</li>
-          <li>Created structured AI and data learning modules.</li>
+          <li>Taught data science and automation modules to global learners.</li>
+          <li>Designed practical Python-based projects for training programs.</li>
         </ul>
       </div>
 
@@ -175,14 +188,14 @@
         <h3>Student Research Assistant – AI Lab, Daffodil International University</h3>
         <span>Mar 2021 – May 2022 · Dhaka, Bangladesh</span>
         <ul>
-          <li>Worked on forecasting and NLP-based educational applications.</li>
-          <li>Co-authored a paper presented at IEEE ICCCNT 2023.</li>
+          <li>Worked on forecasting and NLP projects in education systems.</li>
+          <li>Published work presented at IEEE ICCCNT 2023.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ======= EDUCATION BANNER ======= -->
+  <!-- ======= EDUCATION ======= -->
   <section class="banner fade">
     <div class="container">
       <h2>Education</h2>
@@ -190,18 +203,18 @@
       <div class="edu-item">
         <h3>Master of Science – Data Science</h3>
         <span>Friedrich-Alexander-Universität Erlangen-Nürnberg | 2024 – Present</span>
-        <p>Focus: Data Engineering · Automation · Visualization · AI Literacy</p>
+        <p>Focus: Data Engineering · Automation · AI Literacy · Visualization</p>
       </div>
 
       <div class="edu-item">
         <h3>Bachelor of Science – Computer Science & Engineering</h3>
         <span>Daffodil International University | 2017 – 2022</span>
-        <p>Focus: NLP, Data Science, Software Systems · Thesis published (IEEE)</p>
+        <p>Focus: Data Science, NLP, and Applied Machine Learning · IEEE publication</p>
       </div>
     </div>
   </section>
 
-  <!-- ======= SKILLS BANNER ======= -->
+  <!-- ======= SKILLS ======= -->
   <section class="banner fade">
     <div class="container">
       <h2>Technical Skills</h2>
@@ -215,7 +228,7 @@
     </div>
   </section>
 
-  <!-- ======= CERTIFICATION BANNER ======= -->
+  <!-- ======= CERTIFICATIONS ======= -->
   <section class="banner fade">
     <div class="container">
       <h2>Certifications</h2>
@@ -224,6 +237,18 @@
         <li>Introduction to Microsoft Excel – Coursera</li>
         <li>Data Science & Analytics – HP Life</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ======= VALUES / BEYOND DATA ======= -->
+  <section class="banner fade">
+    <div class="container">
+      <h2>Beyond Data</h2>
+      <p>
+        Outside of analytics, I’m deeply interested in <strong>design thinking</strong>, 
+        mentoring aspiring data learners, and exploring how <strong>AI can improve human communication and accessibility</strong>.  
+        My motivation is to make technology simple, elegant, and impactful — for everyone.
+      </p>
     </div>
   </section>
 
