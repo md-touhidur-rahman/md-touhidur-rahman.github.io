@@ -60,7 +60,7 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--glass);
+  background: linear-gradient(180deg, #00323a 0%, #001e23 100%);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   box-shadow: var(--shadow);
