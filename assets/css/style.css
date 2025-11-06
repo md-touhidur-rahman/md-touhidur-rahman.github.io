@@ -375,3 +375,20 @@ textarea { min-height: 160px; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+/* === PROJECT TITLE COLOR FIX (No Purple/Blue) === */
+.projects a,
+.projects a:visited,
+.project-content a,
+.project-content a:visited {
+  color: #ffffff !important;        /* white text always */
+  text-decoration: none !important; /* no underline */
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.projects a:hover,
+.project-content a:hover {
+  color: var(--cyan-soft) !important; /* cyan hover glow */
+  text-shadow: 0 0 6px rgba(0,213,255,0.6);
+}
+
