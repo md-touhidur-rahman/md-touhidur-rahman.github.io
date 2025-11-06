@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="favicon.ico" />
   <style>
-    /* ====== Project page extra styles ====== */
+    /* ======= Project Page Styles ======= */
     .banner {
       width: 100%;
       padding: 3rem 0;
@@ -17,78 +17,70 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.4);
       backdrop-filter: blur(10px);
       margin-bottom: 2.5rem;
-      animation: fadeUp .7s ease both;
+      animation: fadeUp .8s ease both;
     }
     .banner:nth-child(even){
       background: linear-gradient(135deg, rgba(0,30,35,0.85), rgba(0,47,54,0.85));
     }
-    .banner .container {
-      width: min(100% - 2rem, 1100px);
-      margin: 0 auto;
-      color: var(--text);
+    .banner .container{
+      width:min(100% - 2rem, 1100px);
+      margin:0 auto;
+      color:var(--text);
     }
     .banner h1, .banner h2 {
-      color: var(--cyan-soft);
-      margin-bottom: 1rem;
-      border-left: 4px solid var(--cyan);
-      padding-left: 0.75rem;
+      color:var(--cyan-soft);
+      margin-bottom:1rem;
+      border-left:4px solid var(--cyan);
+      padding-left:.75rem;
     }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:1.5rem;
+      margin-top:1.5rem;
     }
-    .project-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(0,213,255,.12);
-      border-radius: 14px;
-      padding: 1.2rem 1.25rem 1.3rem;
-      box-shadow: 0 8px 22px rgba(0,0,0,.35);
-      backdrop-filter: blur(6px);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    .project-card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(0,213,255,0.15);
+      border-radius:14px;
+      padding:1.25rem 1.4rem;
+      box-shadow:0 8px 22px rgba(0,0,0,0.35);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,.4);
-      border-color: rgba(0,213,255,.4);
+    .project-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(0,213,255,0.35);
+      box-shadow:0 12px 32px rgba(0,0,0,0.45);
     }
-    .project-card h3 {
-      margin-top: 0;
-      color: #fff;
-      font-size: 1.1rem;
+    .project-card h3{
+      color:#fff;
+      margin:0 0 .4rem;
     }
-    .project-card p {
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 0.6rem;
+    .project-card p{
+      color:var(--muted);
+      line-height:1.6;
+      margin-bottom:.6rem;
     }
-    .tag-row {
-      margin-top: .4rem;
+    .project-links a{
+      color:var(--cyan);
+      text-decoration:none;
+      font-weight:600;
     }
-    .tag {
-      display: inline-block;
-      font-size: .7rem;
-      padding: .25rem .55rem;
-      border-radius: 999px;
-      background: rgba(0,213,255,.12);
-      border: 1px solid rgba(0,213,255,.25);
-      color: #dffbff;
-      margin-right: .35rem;
-      margin-bottom: .35rem;
+    .project-links a:hover{ text-decoration:underline; }
+    .tag{
+      display:inline-block;
+      font-size:.7rem;
+      padding:.25rem .55rem;
+      border-radius:999px;
+      background:rgba(0,213,255,.12);
+      border:1px solid rgba(0,213,255,.25);
+      color:#dffbff;
+      margin-right:.35rem;
+      margin-bottom:.35rem;
     }
-    .project-links a {
-      color: var(--cyan);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .project-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* mobile */
-    @media (max-width: 720px){
-      .project-grid { grid-template-columns: 1fr; }
+    .tag-row{ margin-top:.5rem; }
+    @media (max-width:720px){
+      .project-grid{ grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -107,137 +99,125 @@
     </ul>
   </nav>
 
-  <!-- HERO / INTRO -->
+  <!-- HERO -->
   <section class="banner fade">
     <div class="container">
       <h1>Projects</h1>
       <p>
-        A selection of my applied AI, data, and automation work — focused on turning real data into useful tools.
-        Most of these were built to solve actual problems (learning, reporting, or business processes).
+        A collection of my applied <strong>AI</strong>, <strong>data</strong>, and <strong>automation</strong> projects.  
+        Each one focuses on building real-world, data-driven insights and tools that simplify workflows.
       </p>
     </div>
   </section>
 
-  <!-- MAIN PROJECTS -->
+  <!-- === AI / NLP PROJECTS === -->
   <section class="banner fade">
     <div class="container">
-      <h2>Featured</h2>
+      <h2>AI & NLP Tools</h2>
       <div class="project-grid">
 
-        <!-- AI Study Assistant -->
         <div class="project-card">
-          <h3>AI Study Assistant (Streamlit)</h3>
+          <h3><a href="project-ai-study-assistant.html">AI Study Assistant</a></h3>
           <p>
-            An open-source tool that converts lecture slides into <strong>summaries</strong>, <strong>mind maps</strong>, 
-            and <strong>flashcards</strong> in both English and German. Built to make studying faster and language-independent.
+            Converts lecture slides into summaries, mind maps, and bilingual flashcards.  
+            Designed for multilingual study sessions using Hugging Face models.
           </p>
           <div class="tag-row">
-            <span class="tag">Python</span>
             <span class="tag">Streamlit</span>
-            <span class="tag">NLP</span>
             <span class="tag">LLM</span>
-            <span class="tag">Hugging Face</span>
+            <span class="tag">NLP</span>
           </div>
-          <p class="project-links">
-            Live demo: <a href="https://lnkd.in/gz9_9vFr" target="_blank">try it here</a>
-          </p>
+          <p class="project-links"><a href="project-ai-study-assistant.html">View details →</a></p>
         </div>
 
-        <!-- Tens Agro -->
         <div class="project-card">
-          <h3>Tens Agro Ltd — Data Digitalization & Forecasting</h3>
+          <h3>Text-to-Table Converter</h3>
           <p>
-            Migrated an analog, pen-and-paper sales workflow into a structured dataset. Cleaned, merged, and validated vouchers;
-            then applied time-series / forecasting to help the business plan inventory and sales.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Data Cleaning</span>
-            <span class="tag">Time Series</span>
-            <span class="tag">Excel → Python</span>
-            <span class="tag">Business Analytics</span>
-          </div>
-          <p class="project-links">
-            Based on: <a href="publications.html">deep learning sales forecasting paper</a>
-          </p>
-        </div>
-
-        <!-- FAU / AIBE style internal tool -->
-        <div class="project-card">
-          <h3>AI/ML Internal Data Workflow (Academic Support)</h3>
-          <p>
-            Support scripts and documentation for AI-related research tasks (preprocessing, dataset structuring,
-            reporting) used in student/research assistant roles at FAU/IFB/AIBE. Focus on making data reusable across teams.
+            Extracts structured data tables from messy or scanned PDFs using pdfplumber and pandas.  
+            Deployed in Google Colab for instant use.
           </p>
           <div class="tag-row">
             <span class="tag">Python</span>
-            <span class="tag">Data Docs</span>
-            <span class="tag">FAU</span>
-            <span class="tag">Collaboration</span>
+            <span class="tag">pdfplumber</span>
+            <span class="tag">pandas</span>
           </div>
+          <p class="project-links"><a href="https://github.com/md-touhidur-rahman/text-to-table-converter" target="_blank">View on GitHub</a></p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- OTHER PROJECTS / SMALLER WORKS -->
+  <!-- === DATA & FORECASTING === -->
   <section class="banner fade">
     <div class="container">
-      <h2>Other Work</h2>
+      <h2>Data Forecasting & Analytics</h2>
       <div class="project-grid">
 
         <div class="project-card">
-          <h3>Excel-to-Dashboard Automation</h3>
+          <h3><a href="project-tens-agro.html">Agro Sales Forecasting (LSTM)</a></h3>
           <p>
-            Automated repetitive Excel reporting for an education-tech context, transforming raw CSV/Excel files into
-            structured tables ready for Power BI / visualization.
+            Deep learning–based sales forecasting for agricultural products using historical data.  
+            Published at IEEE ICCCNT 2023 (IIT Delhi).
+          </p>
+          <div class="tag-row">
+            <span class="tag">LSTM</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">TensorFlow</span>
+          </div>
+          <p class="project-links"><a href="https://github.com/md-touhidur-rahman/Agro-sales-forecasting-lstm" target="_blank">View on GitHub</a></p>
+        </div>
+
+        <div class="project-card">
+          <h3>Supply Chain Efficiency Metrics</h3>
+          <p>
+            KPI analytics for real FMCG data — computing inventory turnover, fill rates, and demand patterns using pandas.
           </p>
           <div class="tag-row">
             <span class="tag">Python</span>
             <span class="tag">Pandas</span>
-            <span class="tag">Reporting</span>
+            <span class="tag">Data Analytics</span>
           </div>
-        </div>
-
-        <div class="project-card">
-          <h3>LLM Prompting Experiments</h3>
-          <p>
-            Prompt design and response evaluation for chatbot-style assistants — role-based prompting, multilingual tests (DE/EN),
-            and content alignment for internal users.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Prompt Engineering</span>
-            <span class="tag">GenAI</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Teaching & AI Literacy Content</h3>
-          <p>
-            Created structured materials to help non-technical users understand AI outputs and data flows — aligned with your
-            “data & AI literacy” interest.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Documentation</span>
-            <span class="tag">AI Literacy</span>
-          </div>
+          <p class="project-links"><a href="https://github.com/md-touhidur-rahman/supply-chain-efficiency-metrics" target="_blank">View on GitHub</a></p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
+  <!-- === COMPUTER VISION & SIMULATION === -->
   <section class="banner fade">
     <div class="container">
-      <h2>Want to see the code?</h2>
-      <p>
-        Most of these projects can be shared on request or are on GitHub.
-        I keep some internal/academic work private but can walk through the approach.
-      </p>
-      <p>
-        <a href="https://github.com/md-touhidur-rahman" target="_blank" class="btn secondary">Visit GitHub</a>
-      </p>
+      <h2>Computer Vision & Simulation</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h3>Traffic Light Detector</h3>
+          <p>
+            A CNN model trained to detect traffic light states (red/yellow/green) from camera images using TensorFlow/Keras.
+          </p>
+          <div class="tag-row">
+            <span class="tag">CNN</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">TensorFlow</span>
+          </div>
+          <p class="project-links"><a href="https://github.com/md-touhidur-rahman/traffic-light-detector" target="_blank">View on GitHub</a></p>
+        </div>
+
+        <div class="project-card">
+          <h3>Bangladesh Climate Load Simulation</h3>
+          <p>
+            Simulated combined climate and electrical load patterns for stress analysis on energy systems.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Simulation</span>
+            <span class="tag">Energy Systems</span>
+          </div>
+          <p class="project-links"><a href="https://github.com/md-touhidur-rahman/bangladesh-climate-load-simulation" target="_blank">View on GitHub</a></p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -255,4 +235,3 @@
   </footer>
 </body>
 </html>
-
