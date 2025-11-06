@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traffic Light State Detection (CNN, CARLA) | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="../favicon.ico" />
+  <style>
+    .project-header {
+      background: linear-gradient(135deg, rgba(0,47,54,0.9), rgba(0,30,35,0.85));
+      padding: 3.5rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(0,213,255,.25);
+    }
+    .project-header h1 {
+      color: var(--cyan-soft);
+      margin-bottom: .5rem;
+    }
+    .project-header p {
+      color: var(--muted);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .project-content {
+      width: min(100% - 2rem, 1000px);
+      margin: 2.5rem auto;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .project-content h2 {
+      color: var(--cyan-soft);
+      margin-top: 2rem;
+      border-left: 4px solid var(--cyan);
+      padding-left: .6rem;
+    }
+    .tag-row { margin-top: .6rem; }
+    .tag {
+      display: inline-block;
+      font-size: .7rem;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      background: rgba(0,213,255,.12);
+      border: 1px solid rgba(0,213,255,.25);
+      color: #dffbff;
+      margin-right: .35rem;
+      margin-bottom: .35rem;
+    }
+    .file-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(0,213,255,.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .file-table th,
+    .file-table td {
+      border-bottom: 1px solid rgba(0,213,255,.05);
+      padding: .7rem .8rem;
+      text-align: left;
+    }
+    .file-table th {
+      background: rgba(0,213,255,.06);
+      color: #fff;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../index.html"><img src="../assets/images/logo.png" alt="Touhid Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="project-header">
+    <h1>Traffic Light State Detection with CNN (CARLA Dataset)</h1>
+    <p>
+      CNN-based traffic light classifier trained on simulated CARLA images to distinguish Red, Green, Yellow, and Back
+      states — a step toward perception modules for autonomous and connected vehicles.
+    </p>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="project-content fade">
+    <h2>Objective</h2>
+    <p>
+      To simulate real-time perception in an autonomous driving pipeline by classifying traffic light states from RGB
+      images. The model outputs one of four states: <strong>red</strong>, <strong>green</strong>, <strong>yellow</strong>, or
+      <strong>back/off</strong>. This kind of model can later be plugged into a ROS or CARLA-based control stack.
+    </p>
+
+    <h2>Dataset</h2>
+    <ul>
+      <li><strong>Source:</strong> CARLA simulator traffic light frames (manually labeled)</li>
+      <li><strong>Classes:</strong> red, green, yellow, back</li>
+      <li><strong>Structure:</strong> pre-split into <code>train/</code> and <code>val/</code> folders</li>
+      <li><strong>Format:</strong> RGB images, resized to 64×64</li>
+    </ul>
+
+    <h2>Model Architecture</h2>
+    <p>Implemented in TensorFlow/Keras:</p>
+    <ul>
+      <li>Input: <code>64x64x3</code> RGB image</li>
+      <li>Stack of <strong>Conv2D → ReLU → MaxPooling</strong> blocks</li>
+      <li><strong>Dropout</strong> before dense layers to reduce overfitting</li>
+      <li>Final dense layer with <strong>Softmax</strong> for 4-class classification</li>
+    </ul>
+
+    <h2>Results</h2>
+    <ul>
+      <li><strong>Validation Accuracy:</strong> 99.22%</li>
+      <li><strong>F1-scores:</strong> near-perfect across all four classes</li>
+      <li>Includes confusion matrix and sample predictions (see <code>sample_outputs/</code>)</li>
+    </ul>
+
+    <h2>Files</h2>
+    <table class="file-table">
+      <tr>
+        <th>File / Folder</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>traffic_light_classifier.ipynb</code></td>
+        <td>Colab notebook with full training, evaluation, and visualization.</td>
+      </tr>
+      <tr>
+        <td><code>sample_outputs/</code></td>
+        <td>Saved predictions, confusion matrix, qualitative checks.</td>
+      </tr>
+      <tr>
+        <td><code>model.h5</code></td>
+        <td>(Optional) Trained CNN weights for quick inference.</td>
+      </tr>
+      <tr>
+        <td><code>requirements.txt</code></td>
+        <td>List of Python dependencies.</td>
+      </tr>
+      <tr>
+        <td><code>README.md</code></td>
+        <td>Project overview and how to run locally.</td>
+      </tr>
+    </table>
+
+    <h2>Tools Used</h2>
+    <div class="tag-row">
+      <span class="tag">Python</span>
+      <span class="tag">TensorFlow / Keras</span>
+      <span class="tag">OpenCV</span>
+      <span class="tag">Matplotlib</span>
+      <span class="tag">Seaborn</span>
+      <span class="tag">Scikit-learn</span>
+      <span class="tag">Google Colab</span>
+    </div>
+
+    <h2>Evaluation</h2>
+    <p>
+      The model was evaluated using standard classification metrics:
+    </p>
+    <ul>
+      <li>Classification report (precision, recall, F1)</li>
+      <li>Confusion matrix to check per-class performance</li>
+      <li>Visual inspection of predictions on unseen validation images</li>
+    </ul>
+
+    <h2>Future Work</h2>
+    <ul>
+      <li>Run inference on real-world traffic camera footage.</li>
+      <li>Integrate into a ROS node / CARLA autopilot extension.</li>
+      <li>Extend pipeline to traffic-sign recognition for full perception.</li>
+    </ul>
+
+    <a href="../projects.html" class="btn-back">← Back to Projects</a>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Md Touhidur Rahman</div>
+      <div class="footer-center">Empowering Data · AI · Innovation</div>
+      <div class="footer-right">
+        <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+        <a href="mailto:touhid129@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
