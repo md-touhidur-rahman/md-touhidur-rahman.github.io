@@ -416,3 +416,38 @@ a:visited {
   text-shadow: 0 0 6px rgba(0,213,255,0.6);
 }
 
+
+/* ======================================================
+   CONNECT BANNER — Home Page CTA
+====================================================== */
+.connect-banner {
+  background: linear-gradient(135deg, rgba(0,47,54,0.85), rgba(0,30,35,0.85));
+  border-top: 1px solid rgba(0,213,255,0.25);
+  border-bottom: 1px solid rgba(0,213,255,0.25);
+  padding: 3rem 1rem;
+  text-align: center;
+  box-shadow: 0 0 24px rgba(0,213,255,0.1);
+}
+
+.connect-banner h2 {
+  color: var(--cyan-soft);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.connect-banner p {
+  color: var(--text);
+  opacity: 0.9;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.connect-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
