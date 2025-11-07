@@ -3,44 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spatio-Temporal Image Enhancement in Medical Imaging | Blog</title>
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="icon" href="../favicon.ico" />
+  <title>Blog | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.ico" />
   <style>
-    .blog-article {
-      width: min(100% - 2rem, 900px);
-      margin: 3rem auto 4rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(0,213,255,0.15);
-      border-radius: 16px;
-      padding: 2.5rem;
-      line-height: 1.75;
-      color: var(--text);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+    /* ===== BLOG PAGE STYLES ===== */
+    .blog-hero {
+      background: linear-gradient(135deg, rgba(0,47,54,0.9), rgba(0,30,35,0.85));
+      padding: 3.5rem 1rem 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(0,213,255,0.25);
     }
-    .blog-article h1 {
+    .blog-hero h1 {
       color: var(--cyan-soft);
-      margin-bottom: 0.8rem;
-    }
-    .blog-article h2 {
-      color: var(--cyan);
-      margin-top: 2rem;
       margin-bottom: .6rem;
     }
-    .blog-article h3 {
+    .blog-hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--text);
+      opacity: .85;
+    }
+
+    .blog-list {
+      width: min(100% - 2rem, 1100px);
+      margin: 2.5rem auto 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .blog-item {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(0,213,255,.12);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      overflow: hidden;
+    }
+
+    .blog-header {
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .blog-title {
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 0;
+    }
+    .blog-meta {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    /* accordion button */
+    .blog-toggle {
+      background: transparent;
+      border: none;
       color: var(--cyan-soft);
-      margin-top: 1.2rem;
-      margin-bottom: .4rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .3rem 0;
     }
-    .blog-article p {
+    .blog-toggle:focus { outline: none; }
+
+    /* collapsed content */
+    .blog-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+      background: rgba(0,0,0,.15);
+      border-top: 1px solid rgba(0,213,255,.05);
+    }
+    .blog-body-inner {
+      padding: 1rem 1.4rem 1.2rem;
+    }
+    .blog-body p {
       margin-bottom: 1rem;
+      line-height: 1.65;
+      color: var(--text);
     }
-    .blog-article a {
-      color: var(--cyan);
+
+    .blog-actions {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+    .blog-actions .btn {
+      padding: .6rem 1.2rem;
+      border-radius: 8px;
       text-decoration: none;
+      font-weight: 600;
     }
-    .blog-article a:hover {
-      text-decoration: underline;
+    .btn-view {
+      background: linear-gradient(180deg, var(--cyan-dark), #0089a4);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(0,167,199,.25);
+    }
+    .btn-download {
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      background: rgba(255,255,255,.02);
+    }
+
+    /* rotate icon when open */
+    .blog-item.open .blog-toggle span.chevron {
+      transform: rotate(90deg);
+    }
+
+    .blog-toggle span.chevron {
+      display: inline-block;
+      transition: transform .25s ease;
+    }
+
+    @media (max-width: 640px){
+      .blog-actions { flex-direction: column; }
     }
   </style>
 </head>
@@ -48,64 +129,94 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">
-      <a href="../index.html"><img src="../assets/images/logo.png" alt="Touhid Logo" /></a>
+      <a href="index.html"><img src="assets/images/logo.png" alt="Touhid Logo" /></a>
     </div>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../projects.html">Projects</a></li>
-      <li><a href="../publications.html">Publications</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../blogs.html" class="active">Blogs</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blogs.html" class="active">Blog</a></li>
     </ul>
   </nav>
 
-  <main class="blog-article fade">
-    <h1>Spatio-Temporal Techniques for Image Enhancement in Medical Imaging</h1>
-    <p><strong>Author:</strong> Md Touhidur Rahman · Department of Data Science, FAU Erlangen-Nürnberg</p>
-    <p><strong>Keywords:</strong> Medical Imaging, Deep Learning, Spatio-Temporal Data, MRI Enhancement, U-Net, Super-Resolution, Motion Artefact Reduction</p>
+  <!-- HERO -->
+  <section class="blog-hero">
+    <h1>Blog & Notes</h1>
+    <p>Short writeups, research notes, and reports on data science, AI, NLP, and what I’m building.</p>
+  </section>
 
-    <h2>Abstract</h2>
-    <p>
-      In the field of medical diagnostics, sharp and accurate images are crucial for making the right decisions...
-      (add your Abstract text here)
-    </p>
+  <!-- BLOG LIST -->
+  <main class="blog-list">
 
-    <h2>1. Introduction</h2>
-    <p>
-      (Paste your Introduction section here)
-    </p>
+    <!-- POST 1 -->
+    <article class="blog-item">
+      <div class="blog-header">
+        <h2 class="blog-title">Spatio-Temporal Techniques for Image Enhancement in Medical Imaging</h2>
+        <div class="blog-meta">Nov 2025 · Medical Imaging · Deep Learning</div>
+        <button class="blog-toggle" type="button">
+          <span class="chevron">▶</span> Show abstract
+        </button>
+      </div>
+      <div class="blog-body">
+        <div class="blog-body-inner">
+          <p>
+            This report explores how combining spatial and temporal information in deep learning networks (e.g. DDoS-UNet, spatio-temporal CNNs)
+            can enhance MRI image quality, reduce artefacts, and enable higher-resolution reconstruction without increasing scan time.
+          </p>
+          <div class="blog-actions">
+            <a href="assets/files/spatio-temporal-imaging.pdf" target="_blank" class="btn btn-view">Read full PDF</a>
+            <a href="assets/files/spatio-temporal-imaging.pdf" download class="btn btn-download">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </article>
 
-    <h2>2. Methods</h2>
-    <p>
-      (Paste your Methods section here)
-    </p>
+    <!-- POST 2 -->
+    <article class="blog-item">
+      <div class="blog-header">
+        <h2 class="blog-title">From Messy Agro Sales Vouchers to LSTM Forecasting</h2>
+        <div class="blog-meta">Nov 2025 · Time Series · Business Data</div>
+        <button class="blog-toggle" type="button">
+          <span class="chevron">▶</span> Show abstract
+        </button>
+      </div>
+      <div class="blog-body">
+        <div class="blog-body-inner">
+          <p>
+            A practical walkthrough of digitizing pen-and-paper agro data, cleaning and merging it into a usable dataset, and
+            applying LSTM-based time series forecasting to support data-driven sales planning.
+          </p>
+          <div class="blog-actions">
+            <a href="assets/files/agro-sales-forecasting.pdf" target="_blank" class="btn btn-view">Read full PDF</a>
+            <a href="assets/files/agro-sales-forecasting.pdf" download class="btn btn-download">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </article>
 
-    <h2>3. Comparative Analysis and Results</h2>
-    <p>
-      (Paste your results + table summary or visuals)
-    </p>
+    <!-- POST 3 -->
+    <article class="blog-item">
+      <div class="blog-header">
+        <h2 class="blog-title">AI Study Assistant: Turning Slides into Knowledge</h2>
+        <div class="blog-meta">Oct 2025 · NLP · LLM · Education</div>
+        <button class="blog-toggle" type="button">
+          <span class="chevron">▶</span> Show abstract
+        </button>
+      </div>
+      <div class="blog-body">
+        <div class="blog-body-inner">
+          <p>
+            Notes on building a Streamlit app that generates summaries, mind maps, and flashcards from lecture slides, supporting both English and German learners.
+          </p>
+          <div class="blog-actions">
+            <a href="https://classmind-app-nhcfwxfuezfvsqqnskvc6i.streamlit.app/" target="_blank" class="btn btn-view">Open app</a>
+            <a href="assets/files/ai-study-assistant.pdf" download class="btn btn-download">Download notes</a>
+          </div>
+        </div>
+      </div>
+    </article>
 
-    <h2>4. Challenges and Limitations</h2>
-    <p>
-      (Paste your Challenges section here)
-    </p>
-
-    <h2>5. Future Scope</h2>
-    <p>
-      (Paste your Future Scope section here)
-    </p>
-
-    <h2>6. Conclusion</h2>
-    <p>
-      (Paste your Conclusion here)
-    </p>
-
-    <h2>References</h2>
-    <ul>
-      <li><a href="https://arxiv.org/abs/2202.05355" target="_blank">DDoS-UNet: Deep Spatio-Temporal Super-Resolution for Accelerated Dynamic MRI</a></li>
-      <li><a href="https://doi.org/10.1038/s43856-024-00489-9" target="_blank">Real-Time Super-Resolution for MRI-Guided Adaptive Radiotherapy Using Deep Learning</a></li>
-      <li><a href="https://arxiv.org/abs/1904.01574" target="_blank">Spatio-Temporal Deep Learning-Based Artefact Reduction for 2D Radial Cine MRI</a></li>
-    </ul>
   </main>
 
   <!-- FOOTER -->
@@ -120,5 +231,27 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // simple accordion behavior
+    document.querySelectorAll('.blog-item').forEach(item => {
+      const btn = item.querySelector('.blog-toggle');
+      const body = item.querySelector('.blog-body');
+
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // close all others (optional)
+        document.querySelectorAll('.blog-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.blog-body').style.maxHeight = null;
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
