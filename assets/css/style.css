@@ -549,4 +549,46 @@ a:visited {
   .featured { padding-inline: 1rem; }
 }
 
+/* ======================================================
+   LATEST BLOG TEASER (Home)
+====================================================== */
+.latest-blog {
+  padding: 2.5rem 0 3rem;
+  text-align: center;
+}
+
+.latest-blog h2 {
+  font-size: 1.8rem;
+  color: var(--cyan-soft);
+  margin-bottom: 1.2rem;
+}
+
+.blog-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,213,255,0.25);
+  border-radius: 14px;
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.blog-card h3 {
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.blog-card .date {
+  color: var(--cyan-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.blog-card .abstract {
+  color: var(--text);
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
 
