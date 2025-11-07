@@ -3,86 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Md Touhidur Rahman</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="favicon.ico" />
+  <title>Spatio-Temporal Image Enhancement in Medical Imaging | Blog</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="../favicon.ico" />
   <style>
-    /* ===== BLOG PAGE STYLES ===== */
-    .blog-hero {
-      background: linear-gradient(135deg, rgba(0,47,54,0.9), rgba(0,30,35,0.85));
-      padding: 3.5rem 1rem 2.5rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(0,213,255,0.25);
+    .blog-article {
+      width: min(100% - 2rem, 900px);
+      margin: 3rem auto 4rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(0,213,255,0.15);
+      border-radius: 16px;
+      padding: 2.5rem;
+      line-height: 1.75;
+      color: var(--text);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.4);
     }
-    .blog-hero h1 {
+    .blog-article h1 {
       color: var(--cyan-soft);
+      margin-bottom: 0.8rem;
+    }
+    .blog-article h2 {
+      color: var(--cyan);
+      margin-top: 2rem;
       margin-bottom: .6rem;
     }
-    .blog-hero p {
-      max-width: 720px;
-      margin: 0 auto;
-      color: var(--text);
-      opacity: .85;
-    }
-
-    .blog-list {
-      width: min(100% - 2rem, 1100px);
-      margin: 2.5rem auto 3.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.3rem;
-    }
-
-    .blog-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(0,213,255,.12);
-      border-radius: 14px;
-      padding: 1.3rem 1.4rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,.35);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-    .blog-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(0,213,255,.4);
-      box-shadow: 0 12px 30px rgba(0,0,0,.45);
-    }
-
-    .blog-card h2 {
-      margin: 0 0 .4rem;
-      font-size: 1.25rem;
-    }
-    .blog-card h2 a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .blog-card h2 a:hover {
+    .blog-article h3 {
       color: var(--cyan-soft);
-      text-shadow: 0 0 6px rgba(0,213,255,.6);
+      margin-top: 1.2rem;
+      margin-bottom: .4rem;
     }
-    .blog-meta {
-      font-size: .78rem;
-      color: var(--muted);
-      margin-bottom: .5rem;
+    .blog-article p {
+      margin-bottom: 1rem;
     }
-    .blog-card p {
-      margin: 0;
-      line-height: 1.6;
-      color: var(--text);
-      opacity: .9;
-    }
-    .blog-readmore {
-      display: inline-block;
-      margin-top: .7rem;
+    .blog-article a {
       color: var(--cyan);
       text-decoration: none;
-      font-weight: 600;
     }
-    .blog-readmore:hover {
+    .blog-article a:hover {
       text-decoration: underline;
-    }
-
-    @media (max-width: 680px){
-      .blog-card { padding: 1rem 1rem 1.1rem; }
     }
   </style>
 </head>
@@ -90,63 +48,64 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">
-      <a href="index.html"><img src="assets/images/logo.png" alt="Touhid Logo" /></a>
+      <a href="../index.html"><img src="../assets/images/logo.png" alt="Touhid Logo" /></a>
     </div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
     </ul>
   </nav>
 
-  <!-- BLOG HERO -->
-  <section class="blog-hero">
-    <h1>Notes, Experiments & Thoughts</h1>
+  <main class="blog-article fade">
+    <h1>Spatio-Temporal Techniques for Image Enhancement in Medical Imaging</h1>
+    <p><strong>Author:</strong> Md Touhidur Rahman · Department of Data Science, FAU Erlangen-Nürnberg</p>
+    <p><strong>Keywords:</strong> Medical Imaging, Deep Learning, Spatio-Temporal Data, MRI Enhancement, U-Net, Super-Resolution, Motion Artefact Reduction</p>
+
+    <h2>Abstract</h2>
     <p>
-      Short write-ups on data, AI, NLP, student projects, and what I'm building.  
-      I post here whenever I want to explain something in my own words.
+      In the field of medical diagnostics, sharp and accurate images are crucial for making the right decisions...
+      (add your Abstract text here)
     </p>
-  </section>
 
-  <!-- BLOG LIST -->
-  <main class="blog-list">
+    <h2>1. Introduction</h2>
+    <p>
+      (Paste your Introduction section here)
+    </p>
 
-    <!-- POST 1 -->
-    <article class="blog-card">
-      <h2><a href="#">Building an AI Study Assistant with Streamlit</a></h2>
-      <div class="blog-meta">Dec 2025 · AI · NLP · Streamlit</div>
-      <p>
-        How I turned lecture slides into summaries, mind maps, and flashcards using open-source models — and why I built it
-        for multilingual students.
-      </p>
-      <a href="#" class="blog-readmore">Read more →</a>
-    </article>
+    <h2>2. Methods</h2>
+    <p>
+      (Paste your Methods section here)
+    </p>
 
-    <!-- POST 2 -->
-    <article class="blog-card">
-      <h2><a href="#">From Analog Sales Vouchers to LSTM Forecasting</a></h2>
-      <div class="blog-meta">Nov 2025 · Time Series · Business Data</div>
-      <p>
-        A quick story of taking messy agro sales data, cleaning it, and making it useful enough to publish an IEEE paper.
-      </p>
-      <a href="#" class="blog-readmore">Read more →</a>
-    </article>
+    <h2>3. Comparative Analysis and Results</h2>
+    <p>
+      (Paste your results + table summary or visuals)
+    </p>
 
-    <!-- POST 3 -->
-    <article class="blog-card">
-      <h2><a href="#">Playing with Traffic Light Detection in CARLA</a></h2>
-      <div class="blog-meta">Nov 2025 · CV · TensorFlow</div>
-      <p>
-        A CNN-based experiment to classify traffic light states (red, green, yellow, back) from simulated images — and how
-        this fits into AV perception.
-      </p>
-      <a href="#" class="blog-readmore">Read more →</a>
-    </article>
+    <h2>4. Challenges and Limitations</h2>
+    <p>
+      (Paste your Challenges section here)
+    </p>
 
-    <!-- You can keep adding more <article> ... </article> blocks here -->
+    <h2>5. Future Scope</h2>
+    <p>
+      (Paste your Future Scope section here)
+    </p>
 
+    <h2>6. Conclusion</h2>
+    <p>
+      (Paste your Conclusion here)
+    </p>
+
+    <h2>References</h2>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2202.05355" target="_blank">DDoS-UNet: Deep Spatio-Temporal Super-Resolution for Accelerated Dynamic MRI</a></li>
+      <li><a href="https://doi.org/10.1038/s43856-024-00489-9" target="_blank">Real-Time Super-Resolution for MRI-Guided Adaptive Radiotherapy Using Deep Learning</a></li>
+      <li><a href="https://arxiv.org/abs/1904.01574" target="_blank">Spatio-Temporal Deep Learning-Based Artefact Reduction for 2D Radial Cine MRI</a></li>
+    </ul>
   </main>
 
   <!-- FOOTER -->
