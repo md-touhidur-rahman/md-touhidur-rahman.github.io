@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    /* ===== BLOG PAGE STYLES ===== */
+    .blog-hero {
+      background: linear-gradient(135deg, rgba(0,47,54,0.9), rgba(0,30,35,0.85));
+      padding: 3.5rem 1rem 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(0,213,255,0.25);
+    }
+    .blog-hero h1 {
+      color: var(--cyan-soft);
+      margin-bottom: .6rem;
+    }
+    .blog-hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--text);
+      opacity: .85;
+    }
 
+    .blog-list {
+      width: min(100% - 2rem, 1100px);
+      margin: 2.5rem auto 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    .blog-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(0,213,255,.12);
+      border-radius: 14px;
+      padding: 1.3rem 1.4rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,213,255,.4);
+      box-shadow: 0 12px 30px rgba(0,0,0,.45);
+    }
+
+    .blog-card h2 {
+      margin: 0 0 .4rem;
+      font-size: 1.25rem;
+    }
+    .blog-card h2 a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .blog-card h2 a:hover {
+      color: var(--cyan-soft);
+      text-shadow: 0 0 6px rgba(0,213,255,.6);
+    }
+    .blog-meta {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+    .blog-card p {
+      margin: 0;
+      line-height: 1.6;
+      color: var(--text);
+      opacity: .9;
+    }
+    .blog-readmore {
+      display: inline-block;
+      margin-top: .7rem;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .blog-readmore:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 680px){
+      .blog-card { padding: 1rem 1rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="Touhid Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+  </nav>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <h1>Notes, Experiments & Thoughts</h1>
+    <p>
+      Short write-ups on data, AI, NLP, student projects, and what I'm building.  
+      I post here whenever I want to explain something in my own words.
+    </p>
+  </section>
+
+  <!-- BLOG LIST -->
+  <main class="blog-list">
+
+    <!-- POST 1 -->
+    <article class="blog-card">
+      <h2><a href="#">Building an AI Study Assistant with Streamlit</a></h2>
+      <div class="blog-meta">Dec 2025 · AI · NLP · Streamlit</div>
+      <p>
+        How I turned lecture slides into summaries, mind maps, and flashcards using open-source models — and why I built it
+        for multilingual students.
+      </p>
+      <a href="#" class="blog-readmore">Read more →</a>
+    </article>
+
+    <!-- POST 2 -->
+    <article class="blog-card">
+      <h2><a href="#">From Analog Sales Vouchers to LSTM Forecasting</a></h2>
+      <div class="blog-meta">Nov 2025 · Time Series · Business Data</div>
+      <p>
+        A quick story of taking messy agro sales data, cleaning it, and making it useful enough to publish an IEEE paper.
+      </p>
+      <a href="#" class="blog-readmore">Read more →</a>
+    </article>
+
+    <!-- POST 3 -->
+    <article class="blog-card">
+      <h2><a href="#">Playing with Traffic Light Detection in CARLA</a></h2>
+      <div class="blog-meta">Nov 2025 · CV · TensorFlow</div>
+      <p>
+        A CNN-based experiment to classify traffic light states (red, green, yellow, back) from simulated images — and how
+        this fits into AV perception.
+      </p>
+      <a href="#" class="blog-readmore">Read more →</a>
+    </article>
+
+    <!-- You can keep adding more <article> ... </article> blocks here -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Md Touhidur Rahman</div>
+      <div class="footer-center">Empowering Data · AI · Innovation</div>
+      <div class="footer-right">
+        <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+        <a href="mailto:touhid129@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
