@@ -11,7 +11,7 @@
   --cyan-soft: #9ff7ff;
   --text: #e9fcff;
   --muted: #bde7f1;
-  --glass: rgba(0, 47, 54, 0.45); /* translucent cyan-dark glass */
+  --glass: rgba(0, 47, 54, 0.45);
   --glass-strong: rgba(0, 47, 54, 0.75);
   --line: #1f3038;
   --shadow: 0 10px 28px rgba(0, 0, 0, .35);
@@ -20,13 +20,18 @@
 }
 
 /* ---------- Base Layout ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   height: 100%;
   scroll-behavior: smooth;
 }
 
+/* page: navbar | content | footer */
 body {
   min-height: 100vh;
   display: grid;
@@ -34,7 +39,6 @@ body {
   background: #0d1014 url("../images/bg.jpg") center/cover fixed no-repeat;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  margin: 0;
 }
 
 body::before {
@@ -51,13 +55,13 @@ body::before {
 }
 
 /* ======================================================
-   NAVBAR — Glass Effect + Cyan Glow Hover
+   NAVBAR — Glass Effect + Cyan Hover
 ====================================================== */
 nav.navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--glass); /* translucent background */
+  background: var(--glass);
   backdrop-filter: blur(16px) saturate(150%);
   border-bottom: 1px solid rgba(0, 213, 255, 0.25);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
@@ -70,13 +74,7 @@ nav.navbar {
   transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Optional: darker on scroll (add JS for scroll event later) */
-nav.navbar.scrolled {
-  background: var(--glass-strong);
-  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.6);
-}
-
-/* ---------- Logo ---------- */
+/* logo */
 nav.navbar .logo {
   display: flex;
   align-items: center;
@@ -100,14 +98,12 @@ nav.navbar .logo img:hover {
   filter: drop-shadow(0 0 14px rgba(0,213,255,0.6));
 }
 
-/* ---------- Navigation Links ---------- */
+/* links */
 nav.navbar .nav-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   list-style: none;
-  margin: 0;
-  padding: 0;
   gap: 3rem;
   height: 100%;
 }
@@ -126,7 +122,7 @@ nav.navbar .nav-links a {
   color: var(--cyan-soft);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 0.3px;
   transition: color 0.3s ease;
   padding-bottom: 3px;
@@ -147,15 +143,17 @@ nav.navbar .nav-links a::after {
 nav.navbar .nav-links a:hover {
   color: #fff;
 }
+
 nav.navbar .nav-links a:hover::after,
 nav.navbar .nav-links a.active::after {
   width: 100%;
 }
+
 nav.navbar .nav-links a.active {
   color: #fff;
 }
 
-/* ---------- Responsive (Mobile) ---------- */
+/* mobile nav */
 @media (max-width: 720px) {
   nav.navbar {
     flex-wrap: wrap;
@@ -259,226 +257,6 @@ h1 {
 }
 
 /* ======================================================
-   FOOTER — Professional One-Line Layout (Fixed)
-====================================================== */
-footer {
-  background: linear-gradient(180deg, #002f36, #001e23);
-  border-top: 1px solid rgba(0, 213, 255, 0.2);
-  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.4);
-  color: var(--muted);
-  font-size: 0.95rem;
-  width: 100%;
-  padding: 1rem 2rem;
-  position: relative;
-}
-
-.footer-container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  flex-wrap: nowrap !important;
-  gap: 1rem;
-  width: 100%;
-}
-
-.footer-left {
-  color: var(--cyan-soft);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.footer-center {
-  flex: 1;
-  text-align: center;
-  color: var(--muted);
-  font-style: italic;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
-}
-
-.footer-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
-  white-space: nowrap;
-}
-
-.footer-right a {
-  color: var(--cyan);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.footer-right a:hover {
-  color: #fff;
-  text-shadow: 0 0 8px var(--cyan);
-}
-
-html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-body > main {
-  flex: 1;
-}
-footer {
-  margin-top: auto;
-}
-
-@media (max-width: 720px) {
-  .footer-container {
-    flex-direction: column !important;
-    text-align: center;
-    gap: 0.4rem;
-  }
-  .footer-right {
-    justify-content: center;
-  }
-}
-
-/* ======================================================
-   FORMS
-====================================================== */
-.input, textarea {
-  width: 100%;
-  padding: .9rem 1rem;
-  border-radius: 12px;
-  color: var(--text);
-  background: rgba(255,255,255,.04);
-  border: 1px solid var(--line);
-  outline: none;
-  transition: border-color .18s ease, box-shadow .18s ease;
-}
-
-.input:focus, textarea:focus {
-  border-color: rgba(0,213,255,.45);
-  box-shadow: 0 0 0 4px rgba(0,213,255,.16);
-}
-
-textarea { min-height: 160px; resize: vertical; }
-
-/* ======================================================
-   ANIMATIONS
-====================================================== */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade { animation: fadeUp .6s ease both; }
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
-/* === ABSOLUTE FINAL FIX — Project Title Colors === */
-.projects h2 a,
-.projects h3 a,
-.projects h4 a,
-.projects .project-card a,
-.projects .project-content a,
-.projects .project-card h3 a,
-.projects .project-card h4 a,
-.projects a:visited {
-  color: #ffffff !important;            /* always white */
-  text-decoration: none !important;     /* remove underline */
-  font-weight: 600 !important;
-  font-size: 1.15rem !important;
-}
-
-.projects h2 a:hover,
-.projects h3 a:hover,
-.projects h4 a:hover,
-.projects .project-card a:hover,
-.projects .project-content a:hover {
-  color: var(--cyan-soft) !important;   /* cyan hover */
-  text-shadow: 0 0 6px rgba(0,213,255,0.6);
-}
-
-/* Override default browser visited link globally (nuclear option) */
-a:visited {
-  color: #ffffff !important;
-}
-/* force traffic-light project link to stay white */
-.project-link,
-.project-link:visited {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  font-weight: 600;
-}
-
-.project-link:hover {
-  color: var(--cyan-soft) !important;
-  text-shadow: 0 0 6px rgba(0,213,255,0.6);
-}
-
-
-/* ======================================================
-   CONNECT BANNER — Home Page CTA (with soft glow)
-====================================================== */
-.connect-banner {
-  
-  border-top: 1px solid rgba(0,213,255,0.25);
-  border-bottom: 1px solid rgba(0,213,255,0.25);
-  padding: 3rem 1rem;
-  text-align: center;
-  box-shadow: 0 0 24px rgba(0,213,255,0.1);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-}
-
-/* subtle glowing hover */
-.connect-banner:hover {
-  box-shadow: 0 0 35px rgba(0,213,255,0.35), inset 0 0 20px rgba(0,213,255,0.15);
-  transform: translateY(-3px);
-}
-
-/* pulse animation for continuous effect */
-@keyframes cyanPulse {
-  0% { box-shadow: 0 0 20px rgba(0,213,255,0.15); }
-  50% { box-shadow: 0 0 35px rgba(0,213,255,0.35); }
-  100% { box-shadow: 0 0 20px rgba(0,213,255,0.15); }
-}
-
-/* apply a subtle ongoing pulse */
-.connect-banner {
-  animation: cyanPulse 6s ease-in-out infinite;
-}
-
-.connect-banner h2 {
-  color: var(--cyan-soft);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 6px rgba(0,213,255,0.3);
-}
-
-.connect-banner p {
-  color: var(--text);
-  opacity: 0.9;
-  max-width: 750px;
-  margin: 0 auto 2rem;
-  line-height: 1.7;
-}
-
-.connect-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.connect-buttons .btn {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.connect-buttons .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,213,255,0.4);
-}
-/* ======================================================
    FEATURED PROJECTS (Home)
 ====================================================== */
 .featured {
@@ -563,6 +341,7 @@ a:visited {
   margin-bottom: 1.2rem;
 }
 
+/* base card */
 .blog-card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(0,213,255,0.25);
@@ -573,9 +352,14 @@ a:visited {
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 
-.blog-card h3 {
-  color: #fff;
-  margin-bottom: 0.3rem;
+/* home-specific card (for dropdown) */
+.blog-card.home {
+  text-align: left;
+  max-width: 820px;
+}
+
+.blog-card.home h3 {
+  margin-bottom: .25rem;
 }
 
 .blog-card .date {
@@ -591,4 +375,205 @@ a:visited {
   margin-bottom: 1.2rem;
 }
 
+.blog-toggle-home {
+  background: transparent;
+  border: none;
+  color: var(--cyan);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: .6rem;
+}
 
+.blog-toggle-home:hover {
+  text-decoration: underline;
+}
+
+/* ======================================================
+   CONNECT BANNER — Home Page CTA (with soft glow)
+====================================================== */
+.connect-banner {
+  border-top: 1px solid rgba(0,213,255,0.25);
+  border-bottom: 1px solid rgba(0,213,255,0.25);
+  padding: 3rem 1rem;
+  text-align: center;
+  box-shadow: 0 0 24px rgba(0,213,255,0.1);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  animation: cyanPulse 6s ease-in-out infinite;
+}
+
+.connect-banner:hover {
+  box-shadow: 0 0 35px rgba(0,213,255,0.35), inset 0 0 20px rgba(0,213,255,0.15);
+  transform: translateY(-3px);
+}
+
+.connect-banner h2 {
+  color: var(--cyan-soft);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 6px rgba(0,213,255,0.3);
+}
+
+.connect-banner p {
+  color: var(--text);
+  opacity: 0.9;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.connect-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.connect-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,213,255,0.4);
+}
+
+/* ======================================================
+   FOOTER — Professional One-Line Layout
+====================================================== */
+footer {
+  background: linear-gradient(180deg, #002f36, #001e23);
+  border-top: 1px solid rgba(0, 213, 255, 0.2);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.4);
+  color: var(--muted);
+  font-size: 0.95rem;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.footer-container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.footer-left {
+  color: var(--cyan-soft);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.footer-center {
+  flex: 1;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
+.footer-right a {
+  color: var(--cyan);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--cyan);
+}
+
+@media (max-width: 720px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.4rem;
+  }
+  .footer-right {
+    justify-content: center;
+  }
+}
+
+/* ======================================================
+   PROJECT LINK OVERRIDES
+====================================================== */
+.projects h2 a,
+.projects h3 a,
+.projects h4 a,
+.projects .project-card a,
+.projects .project-content a,
+.projects .project-card h3 a,
+.projects .project-card h4 a,
+.projects a:visited {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem;
+}
+
+.projects h2 a:hover,
+.projects h3 a:hover,
+.projects h4 a:hover,
+.projects .project-card a:hover,
+.projects .project-content a:hover {
+  color: var(--cyan-soft) !important;
+  text-shadow: 0 0 6px rgba(0,213,255,0.6);
+}
+
+/* force single links to stay white */
+.project-link,
+.project-link:visited {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+/* ======================================================
+   FORMS
+====================================================== */
+.input,
+textarea {
+  width: 100%;
+  padding: .9rem 1rem;
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--line);
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.input:focus,
+textarea:focus {
+  border-color: rgba(0,213,255,.45);
+  box-shadow: 0 0 0 4px rgba(0,213,255,.16);
+}
+
+textarea { min-height: 160px; resize: vertical; }
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade { animation: fadeUp .6s ease both; }
+
+@keyframes cyanPulse {
+  0% { box-shadow: 0 0 20px rgba(0,213,255,0.15); }
+  50% { box-shadow: 0 0 35px rgba(0,213,255,0.35); }
+  100% { box-shadow: 0 0 20px rgba(0,213,255,0.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
