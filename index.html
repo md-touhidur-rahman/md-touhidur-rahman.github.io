@@ -40,34 +40,57 @@
     <!-- HERO SECTION -->
 
   <!-- FEATURED PROJECTS -->
-  <section class="featured">
-    <div class="container">
-      <h2>Featured Projects</h2>
-      <p class="featured-sub">
-        A few things I’ve built in AI, data, and automation.
-      </p>
-      <div class="featured-grid">
+<section class="featured">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    <p class="featured-sub">
+      A few things I’ve built in AI, data, and automation.
+    </p>
+
+    <div class="featured-slider" id="featuredSlider">
+      <div class="featured-track">
         <!-- Card 1 -->
         <article class="f-card">
+          <img src="assets/images/proj-ai-study.jpg" alt="AI Study Assistant" class="f-thumb" />
           <h3><a href="project/project-ai-study-assistant.html">AI Study Assistant</a></h3>
           <p>Streamlit app that turns lecture slides into summaries, mind maps, and flashcards in EN/DE.</p>
           <a href="project/project-ai-study-assistant.html" class="f-link">View →</a>
         </article>
+
         <!-- Card 2 -->
         <article class="f-card">
+          <img src="assets/images/proj-shopwise.png" alt="ShopWise AI" class="f-thumb" />
+          <h3><a href="project/project-shopwise-ai.html">ShopWise AI – Grocery Price Comparison</a></h3>
+          <p>Bilingual Streamlit app that compares prices across Kaufland, Lidl, and Aldi with fuzzy matching.</p>
+          <a href="project/project-shopwise-ai.html" class="f-link">View →</a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="f-card">
+          <img src="assets/images/proj-agro.jpg" alt="Agro Sales Forecasting" class="f-thumb" />
           <h3><a href="project/project-tens-agro.html">Agro Sales Forecasting (LSTM)</a></h3>
           <p>Deep learning time series model on real agro data, published at IEEE ICCCNT 2023.</p>
           <a href="project/project-tens-agro.html" class="f-link">View →</a>
         </article>
-        <!-- Card 3 -->
+
+        <!-- Card 4 -->
         <article class="f-card">
+          <img src="assets/images/proj-traffic.jpg" alt="Traffic Light Detection" class="f-thumb" />
           <h3><a href="project/project-traffic-light.html">Traffic Light Detection (CNN)</a></h3>
           <p>CNN trained on CARLA simulator to classify traffic light states for AV pipelines.</p>
           <a href="project/project-traffic-light.html" class="f-link">View →</a>
         </article>
+
+        <!-- you can keep adding more cards here -->
       </div>
+
+      <!-- controls -->
+      <button class="slide-btn prev" aria-label="Previous projects">‹</button>
+      <button class="slide-btn next" aria-label="Next projects">›</button>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
 <!-- LATEST BLOG TEASER -->
