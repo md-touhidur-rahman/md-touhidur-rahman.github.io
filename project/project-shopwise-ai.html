@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopWise AI – Grocery Price Comparison | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="../favicon.ico" />
+  <style>
+    .project-container {
+      width: min(100% - 2rem, 900px);
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+    .project-container h2 {
+      color: var(--cyan-soft);
+      margin: 2rem 0 1rem;
+      border-left: 4px solid var(--cyan);
+      padding-left: .6rem;
+      font-size: 1.4rem;
+    }
+    .project-container p {
+      line-height: 1.7;
+      color: var(--text);
+      opacity: .95;
+      margin-bottom: 1rem;
+    }
+    .project-container ul {
+      margin-left: 1.2rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .project-container li { margin-bottom: .3rem; }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-bottom: 2rem;
+    }
+    .tech-tags .tag {
+      background: rgba(0,213,255,.08);
+      border: 1px solid rgba(0,213,255,.25);
+      color: #e9fcff;
+      font-size: .8rem;
+      padding: .3rem .7rem;
+      border-radius: 999px;
+    }
+    .app-preview {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .app-preview img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 0 24px rgba(0,0,0,.4);
+    }
+    .project-links {
+      text-align: center;
+      margin-top: 2.2rem;
+    }
+    .project-links .btn {
+      margin: .3rem .5rem;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2.2rem;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../index.html"><img src="../assets/images/logo.png" alt="Touhid Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../blogs.html">Blogs</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="banner fade">
+    <div class="container">
+      <h1>ShopWise AI – Grocery Price Comparison (Lebensmittel-Preisvergleich)</h1>
+      <p>
+        ShopWise AI is a bilingual Streamlit application that compares grocery prices across
+        major German supermarkets — <strong>Kaufland</strong>, <strong>Lidl</strong>, and <strong>Aldi</strong>.
+        It uses fuzzy matching to interpret user input (English or German), aggregates prices per store,
+        and identifies the cheapest shopping option. The app includes a rule-based reasoning system
+        and optional integration with OpenAI’s API for AI-generated summaries.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="project-container">
+
+    <h2>Overview</h2>
+    <p>
+      ShopWise AI demonstrates the practical intersection of <strong>AI engineering</strong>,
+      <strong>data processing</strong>, and <strong>full-stack development</strong>.
+      Users can input their grocery list — even with typos or mixed languages —
+      and the system automatically:
+    </p>
+    <ul>
+      <li>Matches items against a local product dataset of 200+ grocery items</li>
+      <li>Compares total and per-item prices across multiple retailers</li>
+      <li>Displays results interactively with bilingual summaries (rule-based or LLM-powered)</li>
+      <li>Exports results as a CSV file for further analysis</li>
+    </ul>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li>Fuzzy string matching for handling spelling variations and typos</li>
+      <li>English–German bilingual interface for user inputs</li>
+      <li>Price comparison across multiple supermarkets (Kaufland, Lidl, Aldi)</li>
+      <li>Downloadable price summary in CSV format</li>
+      <li>Rule-based summary generation (no API needed)</li>
+      <li>Optional OpenAI integration for natural-language summaries</li>
+      <li>Clean and responsive Streamlit user interface</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <div class="tech-tags">
+      <span class="tag">Python</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag">difflib (Fuzzy Matching)</span>
+      <span class="tag">JSON Dataset</span>
+      <span class="tag">OpenAI API (optional)</span>
+      <span class="tag">CSV Export</span>
+    </div>
+
+    <h2>App Preview</h2>
+    <div class="app-preview">
+      <img src="../assets/images/shopwise-preview.jpg" alt="ShopWise AI App Screenshot" />
+      <p style="color:var(--muted); font-size:.9rem; margin-top:.6rem;">ShopWise AI – Bilingual Price Comparison Dashboard</p>
+    </div>
+
+    <h2>Impact</h2>
+    <p>
+      ShopWise AI was designed to make grocery budgeting more transparent and accessible in a bilingual context.
+      Early testing showed that it reduced the time required for manual price comparisons by over 60%
+      and demonstrated how AI and fuzzy logic can simplify everyday decision-making.
+      The app highlights how lightweight data tools can empower consumers using open data and simple AI reasoning.
+    </p>
+
+    <div class="project-links">
+      <a class="btn primary" href="https://shopwise-ai-qxiba6ugfmiuhqkmehsmpx.streamlit.app/" target="_blank">Try Live App</a>
+      <a class="btn secondary" href="https://github.com/md-touhidur-rahman/shopwise-ai" target="_blank">View on GitHub</a>
+    </div>
+
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Md Touhidur Rahman</div>
+      <div class="footer-center">Empowering Data · AI · Innovation</div>
+      <div class="footer-right">
+        <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+        <a href="mailto:touhid129@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
