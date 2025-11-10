@@ -637,17 +637,20 @@ textarea { min-height: 160px; resize: vertical; }
 }
 
 
-/* === Fix: prevent purple visited links in project cards === */
+/* === Fix: keep project links in theme teal color === */
 .projects a,
 .projects a:visited,
 .f-card a,
 .f-card a:visited {
-  color: #ffffff !important;
+  color: var(--cyan) !important;
   text-decoration: none !important;
+  font-weight: 600;
 }
 
 .projects a:hover,
 .f-card a:hover {
-  color: var(--cyan-soft) !important;
-  text-shadow: 0 0 6px rgba(0, 213, 255, 0.6);
+  color: #ffffff !important;
+  text-shadow: 0 0 6px rgba(0, 213, 255, 0.7);
+}
+
 }
