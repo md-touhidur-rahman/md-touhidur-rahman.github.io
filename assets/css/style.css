@@ -635,3 +635,19 @@ textarea { min-height: 160px; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+
+/* === Fix: prevent purple visited links in project cards === */
+.projects a,
+.projects a:visited,
+.f-card a,
+.f-card a:visited {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.projects a:hover,
+.f-card a:hover {
+  color: var(--cyan-soft) !important;
+  text-shadow: 0 0 6px rgba(0, 213, 255, 0.6);
+}
