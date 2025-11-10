@@ -362,6 +362,7 @@ h1 {
   display: grid;
   place-items: center;
   transition: background .2s ease;
+  z-index: 5; /* <-- add this */
 }
 
 .slide-btn:hover {
