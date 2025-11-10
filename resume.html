@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    .resume-page {
+      width: min(100% - 2rem, 850px);
+      margin: 3rem auto 4rem;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(0,213,255,0.14);
+      border-radius: 14px;
+      padding: 2rem 1.8rem 2.5rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,.3);
+    }
+    .resume-page h1 {
+      margin-bottom: .2rem;
+    }
+    .resume-meta {
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+      line-height: 1.4;
+    }
+    .resume-section {
+      margin-top: 1.8rem;
+    }
+    .resume-section h2 {
+      font-size: 1.15rem;
+      color: var(--cyan-soft);
+      border-left: 4px solid var(--cyan);
+      padding-left: .6rem;
+      margin-bottom: .8rem;
+    }
+    .resume-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .resume-list li {
+      margin-bottom: .7rem;
+    }
+    .resume-job {
+      margin-bottom: 1rem;
+    }
+    .small-meta {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-bottom: .35rem;
+    }
+    .back-home {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--cyan-soft);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-home:hover {
+      color: #fff;
+    }
+    @media print {
+      nav, footer, .back-home { display: none; }
+      body {
+        background: #fff;
+        color: #000;
+      }
+      .resume-page {
+        box-shadow: none;
+        border: none;
+        background: #fff;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR (optional, to stay consistent) -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="Touhid Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+    </ul>
+  </nav>
+
+  <main class="resume-page">
+    <h1>Md Touhidur Rahman</h1>
+    <p class="resume-meta">
+      M.Sc. Data Science (FAU Erlangen–Nürnberg) · Applied AI · NLP · Data Analytics<br/>
+      Erlangen, Germany · <a href="mailto:touhid129@gmail.com">touhid129@gmail.com</a> ·
+      <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+    </p>
+
+    <div class="resume-section">
+      <h2>Profile</h2>
+      <p>
+        M.Sc. Data Science student with hands-on projects in AI/NLP, time-series forecasting,
+        and dashboarding. Experienced with Streamlit, Python (pandas, scikit-learn), and data
+        cleaning. Building applied AI apps like study assistants and price comparison tools;
+        aiming to create usable, bilingual, data-driven applications. (Source: portfolio + CV)
+      </p>
+    </div>
+
+    <div class="resume-section">
+      <h2>Selected Projects</h2>
+
+      <div class="resume-job">
+        <strong>AI Study Assistant (Streamlit)</strong>
+        <div class="small-meta">Summarization · Mind maps · Flashcards (EN/DE)</div>
+        <p>
+          Turns lecture slides into structured study material using NLP and open-source models.
+          Generates summaries, bilingual flashcards, and visual representations to speed up learning.
+        </p>
+      </div>
+
+      <div class="resume-job">
+        <strong>ShopWise AI – Grocery Price Comparison</strong>
+        <div class="small-meta">Streamlit · Fuzzy Matching · Bilingual UI</div>
+        <p>
+          Compares grocery prices across German supermarkets (Kaufland, Lidl, Aldi) using fuzzy matching
+          on mixed-language input. Supports CSV export and optional OpenAI-powered summaries.
+        </p>
+      </div>
+
+      <div class="resume-job">
+        <strong>Agro Sales Forecasting (LSTM)</strong>
+        <div class="small-meta">TensorFlow · Time Series · IEEE ICCCNT 2023</div>
+        <p>
+          Deep learning-based sales forecasting for agricultural products using historical data.
+          Demonstrates applied ML for real business demand prediction.
+        </p>
+      </div>
+
+      <div class="resume-job">
+        <strong>Traffic Light State Detection (CNN)</strong>
+        <div class="small-meta">Computer Vision · CARLA Dataset</div>
+        <p>
+          CNN model trained to detect traffic light states (red/yellow/green) from camera images,
+          contributing to simulation and AV research pipelines.
+        </p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Education</h2>
+      <ul class="resume-list">
+        <li>
+          <strong>M.Sc. Data Science</strong> — FAU Erlangen–Nürnberg (2024–2026)
+        </li>
+        <li>
+          <strong>B.Sc. Computer Science & Engineering</strong> — Daffodil International University
+          (2017–2022), focus on NLP, databases, deep learning
+        </li>
+      </ul>
+    </div>
+
+    <div class="resume-section">
+      <h2>Experience (Selected)</h2>
+      <div class="resume-job">
+        <strong>Data / QA roles (Remote, Codingal & projects)</strong>
+        <div class="small-meta">2023 – 2024</div>
+        <p>Built small dashboards, validated data, supported documentation and automation efforts.</p>
+      </div>
+      <div class="resume-job">
+        <strong>Student Research Assistant – AI Lab</strong>
+        <div class="small-meta">Daffodil International University</div>
+        <p>Helped with data prep and evaluation for AI/NLP/time-series research.</p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h2>Skills</h2>
+      <p>
+        Python (pandas, numpy, scikit-learn) · Streamlit · Time-series (LSTM) · NLP basics ·
+        Data cleaning · Power BI / dashboarding · Git · SQL · English (fluent), German (A1)
+      </p>
+    </div>
+
+    <a class="back-home" href="index.html">← Back to Home</a>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Md Touhidur Rahman</div>
+      <div class="footer-center">Empowering Data · AI · Innovation</div>
+      <div class="footer-right">
+        <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+        <a href="mailto:touhid129@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
