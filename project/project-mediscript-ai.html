@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediScript AI | Md Touhidur Rahman</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="../favicon.ico" />
+  <style>
+    .project-hero {
+      width: 100%;
+      padding: 3rem 0 2rem;
+      background: linear-gradient(135deg, rgba(0,47,54,0.88), rgba(0,30,35,0.9));
+      border-top: 1px solid rgba(0,213,255,0.2);
+      border-bottom: 1px solid rgba(0,213,255,0.2);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .project-wrap {
+      width: min(100% - 2rem, 980px);
+      margin: 0 auto;
+      color: var(--text);
+    }
+
+    .project-title {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .project-subtitle {
+      max-width: 900px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .project-section {
+      width: min(100% - 2rem, 980px);
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(0,213,255,0.15);
+      border-radius: 16px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.32);
+    }
+
+    .project-section h2 {
+      color: var(--cyan-soft);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--cyan);
+      padding-left: 0.7rem;
+      font-size: 1.2rem;
+    }
+
+    .project-section p,
+    .project-section li {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .project-section ul {
+      padding-left: 1.2rem;
+      margin: 0.6rem 0 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: .78rem;
+      padding: .3rem .6rem;
+      border-radius: 999px;
+      background: rgba(0,213,255,.12);
+      border: 1px solid rgba(0,213,255,.25);
+      color: #dffbff;
+      margin-right: .45rem;
+      margin-bottom: .45rem;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .btn-link {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.72rem 1.1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(0,213,255,0.35);
+      color: #fff;
+      background: rgba(0,213,255,0.12);
+      transition: all 0.25s ease;
+    }
+
+    .btn-link:hover {
+      background: rgba(0,213,255,0.22);
+      transform: translateY(-2px);
+    }
+
+    .preview-box {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(0,213,255,0.15);
+      background: rgba(255,255,255,0.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .preview-box img {
+      width: 100%;
+      display: block;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .mono-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(0,213,255,0.12);
+      border-radius: 12px;
+      padding: 1rem;
+      overflow-x: auto;
+      color: #dffbff;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 720px) {
+      .project-section {
+        padding: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../index.html"><img src="../assets/images/logo.png" alt="Touhid Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../blogs.html">Blogs</a></li>
+    </ul>
+  </nav>
+
+  <section class="project-hero">
+    <div class="project-wrap">
+      <h1 class="project-title">MediScript AI</h1>
+      <p class="project-subtitle">
+        MediScript AI is a general handwriting recognition system built for handwritten notes,
+        prescriptions, essays, and single-word OCR. It uses PaddleOCR for text detection,
+        TrOCR for handwriting recognition, and RapidFuzz for optional medicine correction in
+        prescription mode. The application is deployed with Streamlit and designed as a practical,
+        user-facing OCR tool.
+      </p>
+      <div style="margin-top:1rem;">
+        <span class="tag">Python</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">PaddleOCR</span>
+        <span class="tag">TrOCR</span>
+        <span class="tag">RapidFuzz</span>
+        <span class="tag">OCR</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Overview</h2>
+    <p>
+      This project was designed to solve a real OCR problem: extracting text from handwritten
+      documents in a simple and usable way. Unlike standard OCR tools that work best on printed
+      text, MediScript AI focuses on handwritten input and supports three practical modes:
+      general OCR, prescription OCR, and single-word recognition.
+    </p>
+    <ul>
+      <li>Detects text regions from handwritten images</li>
+      <li>Recognizes handwriting using transformer-based OCR</li>
+      <li>Supports optional medicine correction for prescription input</li>
+      <li>Provides a simple web-based Streamlit interface</li>
+      <li>Can be extended further in Version 2 for improved accuracy</li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Core Features</h2>
+    <ul>
+      <li>General OCR for handwritten documents</li>
+      <li>Prescription OCR with optional medicine-name correction</li>
+      <li>Single word recognition with candidate predictions</li>
+      <li>Support for PaddleOCR and TrOCR backends</li>
+      <li>Cloud deployment with Streamlit Community Cloud</li>
+      <li>Portfolio-ready end-to-end AI application</li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2>System Architecture</h2>
+    <div class="mono-block">Image Input
+↓
+PaddleOCR
+Text Detection (bounding boxes)
+↓
+Crop Regions
+↓
+TrOCR
+Handwriting Recognition
+↓
+RapidFuzz
+Optional Medicine Correction
+↓
+Extracted Text Output</div>
+  </section>
+
+  <section class="project-section">
+    <h2>Tech Stack</h2>
+    <div>
+      <span class="tag">Python</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag">PaddleOCR</span>
+      <span class="tag">PaddlePaddle</span>
+      <span class="tag">Transformers</span>
+      <span class="tag">TrOCR</span>
+      <span class="tag">RapidFuzz</span>
+      <span class="tag">Pillow</span>
+      <span class="tag">NumPy</span>
+      <span class="tag">Pandas</span>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>App Preview</h2>
+    <div class="preview-box">
+      <img src="../assets/images/mediscript-ai-preview.png" alt="MediScript AI Preview">
+    </div>
+    <p style="margin-top:1rem;">
+      Replace the preview image above with a screenshot of your deployed Streamlit app.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <h2>Impact</h2>
+    <p>
+      MediScript AI demonstrates a full applied AI workflow: OCR detection, transformer-based
+      handwriting recognition, optional domain-specific correction, web deployment, and product-style
+      user experience. It is a practical project that combines machine learning, computer vision,
+      NLP, and deployment into one complete system.
+    </p>
+
+    <div class="button-row">
+      <a class="btn-link" href="https://mediscript-ai-v1.streamlit.app/" target="_blank">Try Live App</a>
+      <a class="btn-link" href="https://github.com/md-touhidur-rahman/mediscript-ai" target="_blank">View on GitHub</a>
+    </div>
+
+    <a class="back-link" href="../projects.html">← Back to Projects</a>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">© 2025 Md Touhidur Rahman</div>
+      <div class="footer-center">Empowering Data · AI · Innovation</div>
+      <div class="footer-right">
+        <a href="https://github.com/md-touhidur-rahman" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mdtouhidur/" target="_blank">LinkedIn</a>
+        <a href="mailto:touhid129@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
